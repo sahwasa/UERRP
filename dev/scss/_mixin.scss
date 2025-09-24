@@ -1,0 +1,108 @@
+@use "./var";
+@use 'sass:color';
+@mixin mobile_only {
+  @media (max-width: #{$breakpoint-mobile}){@content;}}
+@mixin mobile_tablet {
+  @media (min-width: #{$breakpoint-mobile_tablet}) and (max-width: #{$breakpoint-tablet - 1px}){
+    @content;
+  }
+}
+@mixin tablet_only {
+  @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}){
+    @content;
+  }
+}
+@mixin desktop{
+  @media (max-width: #{$breakpoint-desktop}){@content;}}
+@mixin desktop_only{
+  @media (min-width: #{$breakpoint-desktop}){@content;}}
+@mixin firefox_only{
+  @-moz-document url-prefix(){
+    @content;
+  }
+}
+@mixin blind{
+  font-size:0;line-height:0;position:absolute!important;left:0;top:0;text-indent:-9999px;visibility:hidden;overflow:hidden;
+}
+@mixin ipt_common(){border:1px solid var.$border;border-radius:2px;color:#777;padding:0px 10px;min-height:var.$iptH;}
+@mixin ipt_hidden{position:absolute;opacity:0;width:0;height:0;appearance:none;outline:none;box-shadow:none;vertical-align:middle;}
+@mixin f_blind{
+  font-size:0!important;line-height:0;color:transparent!important;overflow:hidden;
+}
+@mixin alignL($numbers){
+  @each $num in $numbers{
+   &:nth-of-type(#{$num}){text-align:left;@content;}
+  } 
+}
+@mixin flex($justify:flex-start, $align:center, $direction:row) {
+  display:flex;justify-content:$justify;align-items:$align;flex-direction:$direction;@content;
+}
+@mixin full{display:block;width:100%!important;min-width:auto;}
+@mixin badge_style($max_w:auto){display:inline-block;max-width:$max_w;
+color:#fff;font-size:12px;letter-spacing:-.3px;text-align:center;border-radius:5px;
+border:1px solid transparent;}
+@mixin shape($w_size,$h_size){
+  display:inline-block;content:"";overflow:hidden;font-size:0;width:$w_size;height:$h_size;vertical-align:middle;
+}
+@mixin fontello($ic){
+  display:inline-block;font-family:"fontello";font-weight:normal;content:$ic;line-height:1;
+}
+@mixin ico_only($font:none,$color:inherit){font-size:0;vertical-align:middle;line-height:1;color:$color;@content;
+  @if($font != null){
+    &::before{@include fontello($font);font-size:13px;}
+  }
+}
+@mixin btn($color:#fff,$border:transparent,$bg:#fff,$addTxt:false,$target:'before',$hover:true){  
+  display:inline-block;font-size:13px;line-height:1;border:1px solid $border;border-radius:3px;padding:7px 10px;cursor:pointer;color:$color;background-color:$bg;flex-shrink:0;white-space:nowrap;
+  &[disabled]{cursor:default;}
+  @if($hover){
+    &:not(:disabled):is(:hover,:hover::before){box-shadow:2px 2px 3px rgba(0,0,0,.25) inset;}
+  }
+  @if($addTxt){display:inline-flex;align-items:center;gap:5px;
+    &::#{$target}{@include fontello($addTxt);vertical-align:middle;font-size:14px;}
+  }
+  &.disabled{background:var.$lightgray!important;}
+}
+@mixin icobtn($x:0,$y:0,$size:14px){@include btn($border:var.$mainColor,$color:var.$mainColor,$hover:false);
+  &::before{@include shape($size,$size);background:url(../images/btn.png) $x $y no-repeat;vertical-align:text-top;margin-right:5px;}
+}
+@mixin explanation{@include flex;gap:5px;font-weight:normal;word-break:keep-all;
+  @content;
+  &::before{@include fontello('\eb77');align-self:flex-start;position:relative;top:3px;color:var.$blue;line-height:1;}
+}
+@mixin textStroke($weight:1,$color:#fff){
+  text-shadow:#{$weight}px 0 0 $color, -#{$weight}px 0 0 $color, 0 #{$weight}px 0 $color,0 -#{$weight}px 0 $color;
+}
+@mixin divide($w:1px,$h:10px,$target:'before'){
+  position:relative;display:inline-flex;align-items:center;vertical-align:middle;
+  &::#{$target}{@include shape($w,$h);background-color:var.$gray;flex-shrink:0;}
+}
+@mixin label_item($hideIpt: false, $onBg: var.$blue, $color: #333, $onColor: #fff, $onBorder:#c5c9d0){display:inline-flex;gap:12px;color:$color;border:1px solid #c5c9d0;border-radius:3px;padding:5px 7px;outline:1px solid transparent;cursor:pointer;
+  input{width:18px;aspect-ratio:1;}
+  &:has(:checked){border-color:$onBg;}
+  @if($hideIpt){
+    &{justify-content:center;gap:0;}
+    input{position:absolute;opacity:0;width:0;height:0;
+        :not(&:disabled),
+        :not(&:read-only){&:hover+label{cursor:pointer;}}
+    }
+    &:has(:checked){background-color:$onBg;color:$onColor;border-color:$onBorder;}
+  }  
+}
+@mixin box($borderColor:var.$border,$bgColor:transparent){
+  border:1px solid $borderColor;background-color:$bgColor;padding:15px 25px;
+}
+@mixin blink($aniName, $color) {
+  animation: $aniName 1s step-start infinite;
+  @keyframes #{$aniName} {
+    50% { background-color: $color; }
+  }
+}
+@mixin ellipsis(){
+  width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left;
+}
+@mixin down_arrow($size:15px,$col:#fff,$center:false,$border:false){
+  position:absolute;@include shape($size,$size);transform:scaleY(1.5) rotate(45deg);background-color:$col;@content;
+  @if($border){border:1px solid $border;border-width:0 1px 1px 0;}
+  @if($center){left:50%;margin-left:calc((#{$size} / 2) * -1);}
+}

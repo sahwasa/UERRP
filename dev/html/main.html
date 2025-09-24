@@ -1,0 +1,198 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')
+  <main id="content" class="main_container">
+    <aside>
+      <div class="aside_wrap">
+        <div class="aside_btn">
+          <button type="button" class="btn_add" popovertarget="add_disaster">재난정보 추가</button>
+        </div>
+        <div class="tab">
+          <ul>  
+            <li class="on"><a href="#tab01">관할재난</a></li>
+            <li><a href="#tab02">종료재난</a></li>
+          </ul>
+        </div>
+        <div class="tab_container">
+          <section id="tab01" class="tab_cont">
+            <div class="filter"><button type="button" class="btn_filter">상세조건 검색 +</button></div>
+            <!-- <ul class="disaster_lst" data-empty="현재 입력된 재난이 없습니다."></ul> -->
+            <ul class="disaster_lst" data-empty="현재 입력된 재난이 없습니다.">
+              <li>
+                <a href="main_dtl.html">
+                  <div class="type">
+                    <i class="manual">수동</i><i class="real">실제</i>
+                  </div>
+                  <dl class="desc">
+                    <dt><img src="../images/symbol/FLN.png" class="disaster_symbol" alt="홍수경보"><strong>25년 7월 안양천 범람 재난대응</strong></dt>
+                    <dd><strong>재난위치</strong>서울시(양천구)</dd>
+                    <dd><strong>발생일시</strong>2025-10-10 12:34:56</dd>
+                    <dd><strong>접수일시</strong>2025-10-10 12:34:56</dd>
+                    <dd><i class="status_ongoing">진행중</i></dd>
+                  </dl>
+                </a>
+              </li>
+              <li>
+                <a href="main_dtl.html">
+                  <div class="type">
+                    <i class="auto">자동</i><i class="test">시험</i>
+                  </div>
+                  <dl class="desc">
+                    <dt><img src="../images/symbol/FLN.png" class="disaster_symbol" alt="홍수경보"><strong>25년 7월 안양천 범람 재난대응</strong></dt>
+                    <dd><strong>재난위치</strong>서울시(양천구)</dd>
+                    <dd><strong>발생일시</strong>2025-10-10 12:34:56</dd>
+                    <dd><strong>접수일시</strong>2025-10-10 12:34:56</dd>
+                    <dd><i class="status_await">대기중</i></dd>
+                  </dl>
+                </a>
+              </li>
+              <li>
+                <a href="main_dtl.html">
+                  <div class="type">
+                    <i class="auto">자동</i><i class="training">훈련</i>
+                  </div>
+                  <dl class="desc">
+                    <dt><img src="../images/symbol/FLN.png" class="disaster_symbol" alt="홍수경보"><strong>25년 7월 안양천 범람 재난대응</strong></dt>
+                    <dd><strong>재난위치</strong>서울시(양천구)</dd>
+                    <dd><strong>발생일시</strong>2025-10-10 12:34:56</dd>
+                    <dd><strong>접수일시</strong>2025-10-10 12:34:56</dd>
+                    <dd><i class="status_done">종료</i></dd>
+                  </dl>
+                </a>
+              </li>
+            </ul>
+          </section>
+          <section id="tab02" class="tab_cont">
+          </section>
+        </div>
+      </div>            
+    </aside>
+    <section class="main_cont map_content">
+      <div class="symbols">
+        <div class="layer" style="left:200px;top:200px;">
+          <img src="../images/symbol/FLN.png" class="disaster_symbol" alt="홍수경보">
+          <div class="desc">            
+            <i class="status_ongoing">진행중</i>
+            <strong>25년 7월 안양천 범람 재난대응</strong>
+            <p class="date">2025-10-10 12:34</p>
+          </div>          
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<!-- @@include('../inc/script.html') -->
+<dialog id="add_disaster" class="pop_wrap" popover="manual">
+  <header class="pop_tit">
+    <h1>재난정보 추가 / 수정</h1>
+    <button type="button" class="btn_cross" popovertargetaction="close" popovertarget="add_disaster"></button>
+  </header>
+  <div class="pop_body">
+    <dl class="ipt_dl">
+      <dt class="required">재난유형</dt>
+      <dd>
+        <ul class="ipt_step">
+          <li>
+            <select name="" id="">
+              <option value="">자연재난</option>
+            </select>
+          </li>
+          <li>
+            <select name="" id="">
+              <option value="">호우</option>
+            </select>
+          </li>
+          <li>
+            <select name="" id="">
+              <option value="">호우주의보</option>
+            </select>
+          </li>
+        </ul>
+      </dd>
+      <dt>재난상황</dt>
+      <dd>
+        <ul class="radio_group">
+          <li><label for=""><input type="radio" name="case" >실제</label></li>
+          <li><label for=""><input type="radio" name="case" >훈련</label></li>
+          <li><label for=""><input type="radio" name="case" >시험</label></li>
+        </ul>
+      </dd>
+      <dt class="required"><label for="">위기대응단계</label></dt>
+      <dd>
+        <select name="" id="">
+          <option value="">관심</option>
+          <option value="">주의</option>
+          <option value="">경계</option>
+          <option value="">심각</option>
+        </select>
+      </dd>
+      <dt class="required"><label for="">재난상황명</label></dt>
+      <dd><input type="text"></dd>
+      <dt class="required">발생시각</dt>
+      <dd>
+        <input type="date" name="" id="">
+        <input type="time" name="" id="">
+      </dd>
+      <dt class="required">발생위치</dt>
+      <dd>
+        <ul class="ipt_step">
+          <li>
+            <select name="" id="">
+              <option value="">시도</option>
+            </select>
+          </li>
+          <li>
+            <select name="" id="">
+              <option value="">시군구</option>
+            </select>
+          </li>
+          <li>
+            <select name="" id="">
+              <option value="">읍면동</option>
+            </select>
+          </li>
+        </ul>
+      </dd>
+      <dd><input type="text" title="상세위치" placeholder="상세 위치 입력"></dd>
+      <dt><label for="">내용</label></dt>
+      <dd>
+        <textarea name="" id="" wrap="hard" cols="60" rows="4"></textarea>
+      </dd>
+      <dt class="required"><label for="">주관기관</label></dt>
+      <dd>
+        <select name="" id="">
+          <option value="">주관기관</option>
+        </select>
+      </dd>
+      <dt class="required">담당자</dt>
+      <dd> 
+        <ul class="ipt_step">
+          <li>
+            <select name="" id="">
+              <option value="">소속부서</option>
+            </select>          
+          </li>
+          <li>
+            <select name="" id="">
+              <option value="">담당자</option>
+            </select>
+          </li>
+        </ul>                 
+      </dd>
+      <dd>
+        <ul class="tag_lst">
+          <li>홍길동<button type="button" class="btn_cross">삭제</button></li>
+          <li>김영희<button type="button" class="btn_cross">삭제</button></li>
+        </ul>
+      </dd>
+      <dt>상태</dt>
+      <dd><span class="status_await">대기중</span></dd>
+    </dl>
+  </div>
+  <div class="pop_foot">
+    <button type="button" class="btn_default">추가</button>
+    <button type="button" class="btn_close" popovertargetaction="close" popovertarget="add_disaster">닫기</button>
+  </div>
+</dialog>
+</body>
+</html>
