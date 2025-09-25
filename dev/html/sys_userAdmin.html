@@ -1,0 +1,263 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')
+  <main id="content" class="main_container">
+    <nav>
+      <header>
+        <h1>시스템관리</h1>
+      </header>
+      <ul>
+        <ul>
+        <li class="on"><a href="sys_userAdmin.html">사용자관리</a></li>
+        <li><a href="sys_partAdmin.html">재난대응 부서관리</a></li>
+      </ul>
+      </ul>
+    </nav>
+    <section class="sub_cont">
+      <section class="bredcrumb">
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>시스템관리</li>
+          <li>사용자관리</li>
+        </ul>
+      </section>
+      <header class="tit">
+        <h1>사용자관리</h1>
+      </header>
+      <div class="cont">
+        <div class="search">
+          <ul>
+            <li>
+              <select name="" id=""><option value="">전체</option></select>
+              <input type="text" title="검색어" placeholder="검색어">
+            </li>
+          </ul>
+          <button type="button" class="btn_default">검색</button>
+        </div>
+        <div class="tbl_top">
+          <div class="tool">
+            <button type="button" class="btn_addition" popovertarget="user_edit">추가</button>
+            <button type="button" class="btn_delete">삭제</button>
+          </div>
+        </div>
+        <div class="tbl_wrap">
+          <table class="tbl_default">
+            <caption>사용자 목록</caption>
+            <thead>
+              <tr>
+                <th scope="col"><input type="checkbox" title="전체 선택"></th>
+                <th scope="col">권한</th>
+                <th scope="col">사용자ID</th>
+                <th scope="col">사용자명</th>
+                <th scope="col">소속기관</th>
+                <th scope="col">부서</th>
+                <th scope="col">직급</th>
+                <th scope="col">등록일</th>
+                <th scope="col">수정</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" title="줄선택"></td>
+                <td>시스템관리</td>
+                <td>Admin</td>
+                <td>홍길동</td>
+                <td>ㅇㅇ시청</td>
+                <td>종합상황실</td>
+                <td>주무관</td>
+                <td>2025-10-01</td>
+                <td><button type="button" class="btn_tblModify">수정</button></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        @@include('../inc/paginate.html')
+      </div>
+    </section>    
+  </main>
+</div>
+<!-- @@include('../inc/script.html') -->
+<dialog id="user_edit" class="pop_wrap" popover="manual">
+  <header class="pop_tit">
+    <h1>사용자 추가 / 수정</h1>
+    <button type="button" class="btn_cross" popovertargetaction="close" popovertarget="user_edit"></button>
+  </header>
+  <section class="pop_body">
+    <dl class="ipt_dl">
+      <dt class="required"><label for="">사용자ID</label></dt><dd><input type="text"></dd>      
+      <dt class="required"><label for="">비밀번호</label></dt>
+      <dd><input type="password" placeholder="비밀번호"></dd>
+      <dt class="required">
+        <label for="">비밀번호 확인</label>
+      </dt>
+      <dd>      
+        <input type="password" placeholder="비밀번호 확인">
+        <p class="invalid">비밀번호가 일치하지 않습니다.</p>
+      </dd>        
+      <dt class="required"><label for="">사용자명</label></dt>
+      <dd><input type="text" placeholder="사용자명"></dd>
+      <dt class="required"><label for="">소속기관 / 부서</label></dt>
+      <dd>
+        <ul class="ipt_step">
+          <li>
+            <select name="" id="">
+              <option value="">소속기관</option>
+            </select>          
+          </li>
+          <li>
+            <select name="" id="">
+              <option value="">소속부서</option>
+            </select>          
+          </li>
+        </ul>
+      </dd>
+      <dt><label for="">직급</label></dt>
+      <dd><input type="text" placeholder="직급"></dd>
+      <dt class="required"><label for="">담당업무</label></dt>
+      <dd>
+        <select name="" id=""><option value="">담당업무</option></select>
+      </dd>
+      <dt class="required"><label for="">핸드폰</label></dt>
+      <dd><input type="text" placeholder="핸드폰"></dd>
+      <dt><label for="">이메일</label></dt>
+      <dd><input type="text" placeholder="이메일"></dd>
+      <dt>권한</dt>
+      <dd>
+        <select name="" id="">
+          <option value="">시스템운영자</option>
+        </select>
+      </dd>
+    </dl>
+  </section>
+  <div class="pop_foot">
+    <button type="button" class="btn_default">저장 </button>
+    <button type="submit" class="btn_default_line">수정</button>
+    <button type="submit" class="btn_default_line">삭제</button>
+    <button type="button" class="btn_close">취소</button>
+  </div>
+</dialog>
+</body>
+</html>

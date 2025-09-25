@@ -1,0 +1,219 @@
+@@include('../inc/top.html')
+<div id="wrap" class="wrap">
+  @@include('../inc/header.html')
+  <main id="content" class="main_container">
+    <nav>
+      <header>
+        <h1>시스템관리</h1>
+      </header>
+      <ul>
+        <li><a href="sys_userAdmin.html">사용자관리</a></li>
+        <li class="on"><a href="sys_partAdmin.html">재난대응 부서관리</a></li>
+      </ul>
+    </nav>
+    <section class="sub_cont">
+      <section class="bredcrumb">
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>시스템관리</li>
+          <li>재난대응 부서관리</li>
+        </ul>
+      </section>
+      <header class="tit">
+        <h1>재난대응 부서관리</h1>
+      </header>
+      <div class="cont flex_wrap part_admin">
+        <section class="section">
+          <header class="tit">
+            <h2>소속기관</h2>
+            <div class="tool">
+              <button type="button" class="btn_addition" popovertarget ="part_edit">추가</button>
+              <button type="button" class="btn_modify" popovertarget ="part_edit">수정</button>
+              <button type="button" class="btn_delete">삭제</button>
+            </div>
+          </header>
+          <div class="tbl_wrap">
+            <table class="tbl_default">
+              <caption>기관 목록</caption>
+              <thead>
+                <tr>
+                  <th scope="col"><input type="checkbox" title="전체 선택"></th>
+                  <th scope="col">소속기관명</th>
+                  <th scope="col">설명</th>
+                  <th scope="col">사용여부</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" title="줄선택"></td>
+                  <td>ㅇㅇ시청</td>
+                  <td>상세설명</td>
+                  <td>
+                    <div class="switch_toggle">
+                      <input type="checkbox" id="useYN0" checked>
+                      <label for="useYN0">사용여부</label>
+                    </div>
+                  </td>
+                </tr>              
+                <tr>
+                  <td><input type="checkbox" title="줄선택"></td>
+                  <td>ㅇㅇ시청</td>
+                  <td>상세설명</td>
+                  <td>
+                    <div class="switch_toggle">
+                      <input type="checkbox" id="useYN1">
+                      <label for="useYN1">사용여부</label>
+                    </div>
+                  </td>
+                </tr>              
+                <tr>
+                  <td><input type="checkbox" title="줄선택"></td>
+                  <td>ㅇㅇ시청</td>
+                  <td>상세설명</td>
+                  <td>
+                    <div class="switch_toggle">
+                      <input type="checkbox" id="useYN1">
+                      <label for="useYN1">사용여부</label>
+                    </div>
+                  </td>
+                </tr>              
+                <tr>
+                  <td><input type="checkbox" title="줄선택"></td>
+                  <td>ㅇㅇ시청</td>
+                  <td>상세설명</td>
+                  <td>
+                    <div class="switch_toggle">
+                      <input type="checkbox" id="useYN1">
+                      <label for="useYN1">사용여부</label>
+                    </div>
+                  </td>
+                </tr>              
+                <tr>
+                  <td><input type="checkbox" title="줄선택"></td>
+                  <td>ㅇㅇ시청</td>
+                  <td>상세설명</td>
+                  <td>
+                    <div class="switch_toggle">
+                      <input type="checkbox" id="useYN1">
+                      <label for="useYN1">사용여부</label>
+                    </div>
+                  </td>
+                </tr>              
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="section">
+          <header class="tit">
+            <h2>부서</h2>
+            <div class="tool">
+              <button type="button" class="btn_addition" popovertarget ="part_edit">추가</button>
+              <button type="button" class="btn_modify" popovertarget ="part_edit">수정</button>
+              <button type="button" class="btn_delete">삭제</button>
+            </div>
+          </header>
+          <div class="tbl_wrap">
+            <table class="tbl_default">
+              <caption>부서 목록</caption>
+              <thead>
+                <tr>
+                  <th scope="col"><input type="checkbox" title="전체 선택"></th>
+                  <th scope="col">소속기관명</th>
+                  <th scope="col">설명</th>
+                  <th scope="col">사용여부</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type="checkbox" title="줄선택"></td>
+                  <td>ㅇㅇ시청</td>
+                  <td>상세설명</td>
+                  <td>
+                    <div class="switch_toggle">
+                      <input type="checkbox" id="useYN0" checked>
+                      <label for="useYN0">사용여부</label>
+                    </div>
+                  </td>
+                </tr>              
+                <tr>
+                  <td><input type="checkbox" title="줄선택"></td>
+                  <td>ㅇㅇ시청</td>
+                  <td>상세설명</td>
+                  <td>
+                    <div class="switch_toggle">
+                      <input type="checkbox" id="useYN1">
+                      <label for="useYN1">사용여부</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </section>    
+  </main>
+</div>
+<!-- @@include('../inc/script.html') -->
+<dialog id="part_edit" class="pop_wrap" popover="manual">
+  <header class="pop_tit">
+    <h1>소속기관 or 부서 추가 / 수정</h1>
+    <button type="button" class="btn_cross" popovertargetaction="close" popovertarget="part_edit"></button>
+  </header>
+  <div class="pop_body">
+    <dl class="ipt_dl">
+      <dt class="required"><label for="">소속기관</label></dt>
+      <dd><input type="text"></dd>
+      <dt><label for="">설명</label></dt>
+      <dd><input type="text"></dd>
+      <dt><label for="">사용여부</label></dt>
+      <dd>
+        <div class="switch_toggle">
+          <input type="checkbox" id="useYNpop1">
+          <label for="useYNpop1">사용여부</label>
+        </div>
+      </dd>
+      <dt>소속기관 (부서 추가 수정일때)</dt>
+      <dd><span>ㅇㅇ시청</span></dd>
+      <dt class="required"><label for="">부서명</label></dt>
+      <dd><input type="text"></dd>
+      <dt><label for="">설명</label></dt>
+      <dd><input type="text"></dd>
+      <dd>
+        <div class="switch_toggle">
+          <input type="checkbox" id="useYNpop2">
+          <label for="useYNpop2">사용여부</label>
+        </div>
+      </dd>
+    </dl>
+  </div>
+  <div class="pop_foot">
+    <button type="button" class="btn_default">저장 </button>
+    <button type="button" class="btn_close" popovertargetaction="close" popovertarget="part_edit">닫기</button>
+  </div>
+</dialog>
+</body>
+</html>

@@ -52,7 +52,7 @@ textarea,
 input:not(:is([type="radio"],[type="checkbox"])){@include mixin.ipt_common;}
 input[type="radio"]{width:15px;aspect-ratio:1;border-radius:50%;-webkit-appearance:none;-moz-appearance:none; -o-appearance:none;appearance:none;border:1px solid var.$border;background-color:#fff; 
   &:checked{background-color:#fff;border:4px solid var.$mainColor;}}
-input[type="checkbox"]{border-radius:2px;vertical-align:middle;accent-color:var.$blue;}
+input[type="checkbox"]{border-radius:2px;vertical-align:middle;accent-color:var.$mainColor;}
 input[type="number"]::-webkit-inner-spin-button {appearance:none;-moz-appearance:none;-webkit-appearance:none;}
 textarea{resize:none;background:transparent;white-space:pre-line;padding:5px 10px;}
 input[list]{padding-left:35px;background:url(../images/ico_search.png) 10px 50% no-repeat;}
