@@ -109,3 +109,6 @@ border:1px solid transparent;}
   @if($border){border:1px solid $border;border-width:0 1px 1px 0;}
   @if($center){left:50%;margin-left:calc((#{$size} / 2) * -1);}
 }
+@mixin bgcolor_opacity($color,$opacity: 0.5) {
+  background: rgba($color, $opacity);
+}
