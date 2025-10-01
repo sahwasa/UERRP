@@ -48,11 +48,11 @@ border:1px solid transparent;}
 @mixin fontello($ic){
   display:inline-block;font-family:"fontello";font-weight:normal;content:$ic;line-height:1;
 }
-@mixin ico_only($font:false,$color:inherit,$x:0,$y:0,$size:14px){font-size:0;vertical-align:middle;line-height:1;color:$color;@content;
+@mixin ico_only($font:false,$color:inherit,$x:0,$y:0,$size:14px,$imgurl:'btn.png'){font-size:0;vertical-align:middle;line-height:1;color:$color;@content;
   @if($font){
     &::before{@include fontello($font);font-size:13px;}
   }@else{
-    &::before{@include shape($size,$size);background:url(../images/btn.png) $x $y no-repeat;vertical-align:text-top;margin-right:5px;}
+    &::before{@include shape($size,$size);background:url(../images/#{$imgurl}) $x $y no-repeat;vertical-align:text-top;margin-right:5px;}
   }
 }
 @mixin btn($color:#fff,$border:transparent,$bg:#fff,$addTxt:false,$target:'before',$hover:true){  
