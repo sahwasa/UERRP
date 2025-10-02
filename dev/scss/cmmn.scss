@@ -66,6 +66,13 @@
   }
   th{background-color:var.$thColor;}
 }
+.tbl_hover{
+  tr{cursor:pointer;
+    &:hover{font-weight:600;}
+    &:has(:first-child :checked),&.on{background-color:var.$lightblue;}
+  }
+
+}
 .disconnection{background-color:var.$bggray;color:#aaa;}
 /* paginate */
 .tui-pagination{display:flex;align-items:center;justify-content:center;margin-top:32px;text-align:center;gap:2px;
