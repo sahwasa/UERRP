@@ -40,6 +40,7 @@
               <thead>
                 <tr>
                   <th scope="col"><input type="radio" class="type_check" title="전체 선택"></th>
+                  <th scope="col">소속기관 코드</th>
                   <th scope="col">소속기관명</th>
                   <th scope="col">설명</th>
                   <th scope="col">사용여부</th>
@@ -48,6 +49,7 @@
               <tbody>
                 <tr>
                   <td><input type="checkbox" title="줄선택"></td>
+                  <td>-</td>
                   <td>ㅇㅇ시청</td>
                   <td>상세설명</td>
                   <td>
@@ -59,6 +61,7 @@
                 </tr>              
                 <tr>
                   <td><input type="radio" class="type_check" title="줄선택"></td>
+                  <td>-</td>
                   <td>ㅇㅇ시청</td>
                   <td>상세설명</td>
                   <td>
@@ -70,6 +73,7 @@
                 </tr>              
                 <tr>
                   <td><input type="radio" class="type_check" title="줄선택"></td>
+                  <td>-</td>
                   <td>ㅇㅇ시청</td>
                   <td>상세설명</td>
                   <td>
@@ -81,6 +85,7 @@
                 </tr>              
                 <tr>
                   <td><input type="radio" class="type_check" title="줄선택"></td>
+                  <td>-</td>
                   <td>ㅇㅇ시청</td>
                   <td>상세설명</td>
                   <td>
@@ -92,6 +97,7 @@
                 </tr>              
                 <tr>
                   <td><input type="radio" class="type_check" title="줄선택"></td>
+                  <td>-</td>
                   <td>ㅇㅇ시청</td>
                   <td>상세설명</td>
                   <td>
@@ -120,7 +126,8 @@
               <thead>
                 <tr>
                   <th scope="col"><input type="radio" class="type_check" title="전체 선택"></th>
-                  <th scope="col">소속기관명</th>
+                  <th scope="col">소속부서 코드</th>
+                  <th scope="col">소속부서명</th>
                   <th scope="col">설명</th>
                   <th scope="col">사용여부</th>
                 </tr>
@@ -128,6 +135,7 @@
               <tbody>
                 <tr>
                   <td><input type="radio" class="type_check" title="줄선택"></td>
+                  <td>-</td>
                   <td>ㅇㅇ시청</td>
                   <td>상세설명</td>
                   <td>
@@ -138,6 +146,7 @@
                   </td>
                 </tr>              
                 <tr>
+                  <td>-</td>
                   <td><input type="radio" class="type_check" title="줄선택"></td>
                   <td>ㅇㅇ시청</td>
                   <td>상세설명</td>
@@ -147,28 +156,7 @@
                       <label for="useYN1">사용여부</label>
                     </div>
                   </td>
-                </tr>
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
-                <tr><td></td> <td></td> <td></td> <td></td> </tr>           
+                </tr>                           
               </tbody>
             </table>
           </div>
@@ -185,6 +173,13 @@
   </header>
   <div class="pop_body">
     <dl class="ipt_dl">
+      <dt class="required"><label for="">소속기관 코드</label></dt>
+      <dd>
+        <div class="ipt_group">
+          <input type="text"><button type="button" class="btn_sub_line">중복확인</button>
+        </div>
+        <p class="invalid">중복된 코드입니다.</p>
+      </dd>
       <dt class="required"><label for="">소속기관</label></dt>
       <dd><input type="text"></dd>
       <dt><label for="">설명</label></dt>

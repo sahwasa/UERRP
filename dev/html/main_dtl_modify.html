@@ -106,174 +106,28 @@
           <i class="ico_pin" style="left:100px;top:50px;">재난위치</i>
         </div>
       </div>
-      <div class="proc_desc">     
-        <section class="proc_info">
-          <header class="tit">
-            <h1>이재민 구호</h1>
-            <div class="tool">
-              <a href="main_dtl_modify.html" class="btn_default_line">수정</a>
-              <button type="button" class="btn_default_line">삭제</button>
-              <button type="button" class="btn_default">수행완료</button>
-            </div>
-          </header>
-          <div>
-            <div class="proc_content">업무내용
-              1. 이재민구호
-              2. 명단 작성 후 조치내용 보고
-            </div>
-            <div class="proc_status">
-              진행상태 : 2025-10-01 15:10
-              <i class="status_ongoing">진행중</i>
-              <!-- <i class="status_done">완료</i> -->
-              <!-- <i class="status_await">대기중</i> -->
-            </div>                  
-          </div>
-        </section>
+      <div class="proc_desc">
 
-        <div class="proc_member">
-          <header class="tit">
-            <h2>실무반 편성정보</h2>
-            <div class="tool">
-              <button type="button" class="btn_default_line" popovertarget="member_edit">실무반 추가 / 수정</button>
-              <button type="button" class="btn_default">상황전파</button>
-              <button type="button" class="btn_default">상황종료? 수행완료?</button>
-            </div>
-          </header>
-          <div class="tbl_wrap">
-            <table class="tbl_default"> 
-              <caption>실무반 편성정보</caption>
-              <thead>
-                <tr>
-                  <th scope="col">구분</th>
-                  <th scope="col">이름</th>
-                  <th scope="col">소속기관</th>
-                  <th scope="col">부서명</th>
-                  <th scope="col">상황전파</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>실무</td>
-                  <td>홍길동</td>
-                  <td>서울시청</td>
-                  <td>종합상황실</td>
-                  <td>확인 (08/20 16:30)</td>                
-                </tr>
-                <tr class="disconnection">
-                  <td>실무</td>
-                  <td>김영희</td>
-                  <td>서울시청</td>
-                  <td>종합상황실</td>
-                  <td><button type="button" class="btn_send">전송</button></td>                
-                </tr>
-                <tr>
-                  <td>지원</td>
-                  <td>박영수</td>
-                  <td>서울시청</td>
-                  <td>종합상황실</td>
-                  <td>확인 (08/20 16:30)</td>                
-                </tr>
-                <tr class="disconnection">
-                  <td>지원</td>
-                  <td>강백호</td>
-                  <td>서울시청</td>
-                  <td>종합상황실</td>
-                  <td>확인 (08/20 16:30)</td>                
-                </tr>
-              </tbody>
-            </table>
+        <!-- 입력시 -->
+        <seciton class="proc_ipt">
+          <div class="ipt_item">
+            <label for=""><input type="text" id="" placeholder="프로세스명"></label>
+            <!-- <button type="submit" class="btn_default">저장</button> -->
+            <a href="main_dtl.html" class="btn_default">저장</a>
           </div>
-        </div>
-      </div>
+          <textarea name="" id="" rows="15"  wrap="hard" placeholder="임무 및 역할 등 내용"></textarea>
+        </seciton>
+        <!-- 입력시__e -->
     </section>
     <!-- 상황전파 이전일 때 .chat_wrap에 .disabled 붙여주세요. -->
-    <section class="chat_wrap">
+    <section class="chat_wrap disabled">
       <header class="tit">
         <h1 class="blind">상황보고톡</h1>
         <div class="tool">          
           <button type="button" class="btn_newWindow" title="새창 띄우기" onclick="pop = window.open('p_chat.html','재난대응 프로세스','location=no, toolbar=no,scrollbars=no,resizable=yes,status=no,menubar=no,width=600, height=800, top=0,left=0')">새창 띄우기</button>
         </div>
       </header>      
-      <ul class="msg_lst">
-        <li class="system_item">
-          <div class="welcome_msg">
-            <strong>업무에 배정되었습니다.</strong>
-            <ul class="welcome_desc">
-              <li><strong>재난발생 일시</strong>2025-10-10 12:34:56</li>
-              <li><strong>재난발생 위치</strong>서울시(양천구)서울시(양천구)서울시(양천구)서울시(양천구)서울시(양천구)</li>
-              <li><strong>위기경보 단계</strong><span class="crisisStage_lv2">주의</span></li>
-            </ul>
-            <div class="content">
-              <strong>이재민 구호이재민 구호이재민 구호이재민 구호이재민 구호이재민 구호이재민 구호이재민 구호이재민 구호</strong>
-              <p>세부 내용세부 내용세부 내용세부 내용세부 내용세부 내용세부 내용</p>
-              <!-- 실무자 목록 -->
-              <ul class="tag_lst">
-                <li>재난안전대책본부/홍길동</li>
-                <li>종합상황실/김영희</li>
-              </ul>
-            </div>
-          </div>
-        </li>
-        <li class="system_item">          
-          <div class="date_marker" style="opacity: 1; transition: opacity 0.2s ease-out;">2025년 6월 23일(월)</div>
-        </li>
-        <li>
-          <i class="profile_thumb">
-            <img src="https://dummyimage.com/34:34x34" width="34px" height="34px" alt="">
-          </i>
-          <strong>홍길동</strong>
-          <div class="balloon">
-            <p>안녕하세요.</p>
-          </div>
-          <div class="chat_status">           
-            <span class="time">
-              <em>오전</em>
-              <span>09:45</span>
-            </span>
-          </div>
-        </li>
-        <li class="my_msg">
-          <div class="balloon">
-            <p>안녕하세요.
-            세부내용
-            세부세부 내용내용</p>
-          </div>
-          <div class="chat_status">
-            <!-- <span class="read">읽음</span> -->
-            <span class="time">
-              <em>오후</em>
-              <span>09:45</span>
-            </span>
-          </div>
-        </li>
-        <li>
-          <i class="profile_thumb">홍</i>
-          <strong>홍길동</strong>
-          <div class="balloon">
-            <p>어쩌고 저쩌고</p>
-            <p>불라불라불라불라</p>
-            <p>이재민을 구호해주시고 명단을 작성하여 보고해주시길 바랍니다. 보셨으면 답장도 해주세요.</p>
-          </div>
-          <div class="chat_status">           
-            <span class="time">
-              <em>오전</em>
-              <span>09:45</span>
-            </span>
-          </div>
-        </li>        
-        <li class="my_msg">
-          <div class="balloon">
-            <p>넵 알겠습니다~! ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ넵 알겠습니다~! ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ넵 알겠습니다~! ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ넵 알겠습니다~!ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ</p>
-          </div>
-          <div class="chat_status">
-            <!-- <span class="read">읽음</span> -->
-            <span class="time">
-              <em>오후</em>
-              <span>09:45</span>
-            </span>
-          </div>
-        </li>        
-      </ul>        
+      <ul class="msg_lst"></ul>        
       <div class="ipt_area">
         <textarea wrap="hard" rows="7"></textarea>
         <div class="btn_area">

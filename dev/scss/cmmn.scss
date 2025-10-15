@@ -69,7 +69,7 @@
 .tbl_hover{
   tr{cursor:pointer;
     &:hover{font-weight:600;}
-    &:has(:first-child :checked),&.on{background-color:var.$lightblue;}
+    &.on{background-color:var.$lightblue;}
   }
 
 }
@@ -318,7 +318,11 @@ $_types:(auto:var.$mutepurple,manual:var.$muteolive,real:var.$mutered,test:var.$
     &::before{background-position-y:-99px;}
   }
 }
-.proc_desc{padding:25px var.$maingap;}
+.proc_desc{padding:25px var.$maingap;
+  .status_ongoing{color:var.$mint;}
+  .status_await{color:#92a5a5;}
+  .proc_status{@include mixin.flex($justify:flex-end);gap:23px;margin-top:10px;letter-spacing:-.13px;}
+}
 .proc_ipt{@include mixin.flex($direction:column,$align:stretch);gap:12px;
   .ipt_item{@include mixin.flex;gap:4px;
     label{flex:1};
@@ -328,9 +332,6 @@ $_types:(auto:var.$mutepurple,manual:var.$muteolive,real:var.$mutered,test:var.$
 .proc_info{
   h1{font-size:16px;font-weight:600;}
   .proc_content{@include mixin.box;height:100px;overflow-y:auto;white-space:pre-line;}
-  .status_ongoing{color:var.$mint;}
-  .status_await{color:#92a5a5;}
-  .proc_status{@include mixin.flex($justify:flex-end);gap:23px;margin-top:10px;letter-spacing:-.13px;}
 }
 .proc_member{margin-top:45px; 
   .tbl_wrap{max-height:298px;min-height:113px;}
