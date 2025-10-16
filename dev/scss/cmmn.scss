@@ -150,7 +150,7 @@
 .login{flex:.45;@include mixin.flex($justify:center,$align:stretch,$direction:column);height:100%;padding:6% 7%;gap:20%;
   header{text-align:center;}
   .main_logo{font-family:'NanumSquare';color:#535353;letter-spacing:-1.8px;font-size:36px;
-    b{color:#1e319d;}
+    b{color:#1e319d;font-weight:600;}
     &::before{@include mixin.shape(116px,116px);display:block;background:url(../images/login_logo.png) 0 no-repeat;margin:0 auto 28px;}
   }
   .footer{height:fit-content;color:#696868;font-size:12px;background-color:transparent;}
@@ -160,7 +160,7 @@
     &:focus{border-bottom:2px solid var.$mainColor;margin-bottom:-1px;outline:none;}
   }
 }
-[for="remember"]{color:#777;font-size:13px;letter-spacing:-.98px;}
+[for="remember"]{color:#777;font-size:13px;}
 .btn_login{line-height:76px;border-radius:37px;background-image:linear-gradient(45deg, #1e319d,#4960e1);font-size:20px;color:#fff;font-weight:bold;margin-top:15%;text-align:center;letter-spacing:-1.5px;}
 //toast
 .toast_alarm{display:block;position:fixed;z-index:9999;bottom:10px;right:10px;
@@ -171,16 +171,16 @@
   .new_disater{background-color:var.$orange;}
   .change_process{background-color:var.$blue;}
   .toast_msg{flex:0 1 auto;overflow:hidden;
-    p{@include mixin.ellipsis();}
+    p{@include mixin.ellipsis();font-weight:500;}
     b{color:#ef4848;font-size:16px;font-weight:800;}
   }
-	.toast_time{font-size:11px;}
+	.toast_time{font-size:12px;font-weight:300;}
 	.btn_cross{align-self:flex-start;transform:scaleY(1.2);margin-left:auto;}
 }                                                 
 .header{@include mixin.flex;height:56px;padding:0 var.$maingap;background-color:var.$mainColor;
   a,button{color:#fff;}
   h1{font-size:20px;
-    a{font-weight:600;letter-spacing:-.05em;letter-spacing:-.05em;
+    a{font-weight:700;letter-spacing:-.01em;
       &::before{@include mixin.shape(38px,42px);background:url(../images/main_logo.png) 0 no-repeat;margin-right:10px;}
     }
   }
