@@ -172,7 +172,7 @@
             <div class="proc_wrap">
               <!-- <ul class="proc_lst" data-empty="현재 입력된 프로세스가 없습니다."></ul> -->
               <ul class="proc_lst" data-empty="현재 입력된 프로세스가 없습니다.">
-                <li>
+                <li class="on">
                   <a href="">
                     <i class="status await">대기중</i>
                     <div class="proc_data">
@@ -244,7 +244,6 @@
             </div>                  
           </div>
         </section>
-
         <div class="proc_member">
           <header class="tit">
             <h2>실무반 편성정보</h2>
@@ -259,41 +258,41 @@
               <caption>실무반 편성정보</caption>
               <thead>
                 <tr>
+                  <th scope="col">접속상태</th>
                   <th scope="col">구분</th>
                   <th scope="col">이름</th>
                   <th scope="col">소속기관</th>
                   <th scope="col">부서명</th>
-                  <th scope="col">상황전파</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
+                  <td><i class="i_connection">접속</i></td>
                   <td>실무</td>
                   <td>홍길동</td>
                   <td>서울시청</td>
                   <td>종합상황실</td>
-                  <td>확인 (08/20 16:30)</td>                
                 </tr>
-                <tr class="disconnection">
+                <tr>
+                  <td><i class="i_disconnection">비접속</i></td>
                   <td>실무</td>
                   <td>김영희</td>
                   <td>서울시청</td>
                   <td>종합상황실</td>
-                  <td><button type="button" class="btn_send">전송</button></td>                
                 </tr>
                 <tr>
+                  <td><i class="i_connection">접속</i></td>
                   <td>지원</td>
                   <td>박영수</td>
                   <td>서울시청</td>
                   <td>종합상황실</td>
-                  <td>확인 (08/20 16:30)</td>                
                 </tr>
-                <tr class="disconnection">
+                <tr>
+                  <td><i class="i_disconnection">비접속</i></td>
                   <td>지원</td>
                   <td>강백호</td>
                   <td>서울시청</td>
                   <td>종합상황실</td>
-                  <td>확인 (08/20 16:30)</td>                
                 </tr>
               </tbody>
             </table>
