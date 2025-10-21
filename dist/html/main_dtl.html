@@ -16,12 +16,12 @@
   <h1 class="main_logo"><a href="../html/main.html?index=1,1">도시 극한호우 상황전파</a></h1>  
   <div class="util">
     <ul>
+      <li><button type="button">재난알림 <span class="alert_num">82</span></button></li>
+      <li><button type="button">채팅알림 <span class="alert_num">2</span></button></li>
+      <li><a href="sys_userAdmin.html">시스템관리</a></li>
       <li>
         <button type="button" class="account" popovertarget="p_userInfo"><b>시스템 운영자님</b></button>      
       </li>
-      <li><button type="button">채팅알림 <span class="alert_num">2</span></button></li>
-      <li><button type="button">재난알림 <span class="alert_num">82</span></button></li>
-      <li><a href="sys_userAdmin.html">시스템관리</a></li>
       <li><a href="login.html">로그아웃</a></li>
     </ul>
   </div>
@@ -123,6 +123,8 @@
           <a href="../html/main.html" class="btn_prev">이전</a>
           <h1 class="blind">재난정보 상세페이지</h1>
           <div class="tool">
+            <button type="button" class="btn_default">재난발령</button>
+            <button type="button" class="btn_default">상황종료</button>
             <button type="button" class="btn_default_line">수정</button>
           </div>
         </header>        
@@ -150,9 +152,9 @@
                   <li>종합상황실/김영희</li>
                 </ul>
               </dd>
-              <dd class="status await">대기중<button type="button">재난발령</button></dd>
-              <!-- <dd class="status ongoing">진행중<button type="button">상황종료</button></dd>
-              <dd class="status done">상황종료</dd> -->
+              <dd class="status await">대기중</dd>
+              <dd class="status ongoing">진행중</dd>
+              <dd class="status done">상황종료</dd>
             </dl>
           </section>
           <section class="response_proc">
@@ -217,6 +219,11 @@
     </aside>
     <section class="main_cont">
       <div class="map_content">
+        <div class="btn_wrap btn_map">
+          <button class="btn" id="mapmode_1" onclick="mapMode(1)">기본지도</button>
+          <button class="btn on" id="mapmode_2" onclick="mapMode(2)">2D지도</button>
+          <button class="btn" id="mapmode_3" onclick="mapMode(3)">위성지도</button>
+        </div>
         <div class="symbols">
           <i class="ico_pin" style="left:100px;top:50px;">재난위치</i>
         </div>

@@ -68,6 +68,11 @@
       </div>            
     </aside>
     <section class="main_cont map_content">
+      <div class="btn_wrap btn_map">
+        <button class="btn" id="mapmode_1" onclick="mapMode(1)">기본지도</button>
+        <button class="btn on" id="mapmode_2" onclick="mapMode(2)">2D지도</button>
+        <button class="btn" id="mapmode_3" onclick="mapMode(3)">위성지도</button>
+      </div>
       <div class="symbols">
         <div class="layer" style="left:200px;top:200px;">
           <img src="../images/symbol/FLN.png" class="disaster_symbol" alt="홍수경보">
@@ -190,7 +195,8 @@
     </dl>
   </div>
   <div class="pop_foot">
-    <button type="button" class="btn_default">추가</button>
+    <button type="button" class="btn_default">추가 or 저장</button>
+    <button type="button" class="btn_default_line">삭제(대기중 즉 발령전 일때만)</button>
     <button type="button" class="btn_close" popovertargetaction="close" popovertarget="add_disaster">닫기</button>
   </div>
 </dialog>
