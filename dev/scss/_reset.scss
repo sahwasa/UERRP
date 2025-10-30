@@ -88,7 +88,7 @@ input[type='time']::-webkit-calendar-picker-indicator{background-image: url(../i
   input:first-of-type{order:-1;}
 }
 .ipt_step{@include mixin.flex{gap:7px;};display:inline-flex;vertical-align:middle;
-  li:not(:first-of-type)::before{content:'>'};
+  li:not(:first-of-type)::before{content:'>';margin-right:5px;}
   input:first-of-type{order:-1;}
   & + button{margin-left:3px;}
 }

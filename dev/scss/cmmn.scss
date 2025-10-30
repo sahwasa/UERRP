@@ -149,9 +149,9 @@
 .visual_login{flex:1;}
 .login{flex:.45;@include mixin.flex($justify:center,$align:stretch,$direction:column);height:100%;padding:6% 7%;gap:20%;
   header{text-align:center;}
-  .main_logo{font-family:'NanumSquare';color:#535353;letter-spacing:-1.8px;font-size:36px;
-    b{color:#1e319d;font-weight:600;}
-    &::before{@include mixin.shape(116px,116px);display:block;background:url(../images/login_logo.png) 0 no-repeat;margin:0 auto 28px;}
+  .main_logo{color:#535353;letter-spacing:-1.8px;font-size:36px;
+    b{color:#000;font-weight:700;}
+    &::before{@include mixin.shape(220px,56px);display:block;background:url(../images/login_logo.png) 0 no-repeat;margin:0 auto 28px;}
   }
   .footer{height:fit-content;color:#696868;font-size:12px;background-color:transparent;}
 }
@@ -180,8 +180,8 @@
 .header{@include mixin.flex;height:56px;padding:0 var.$maingap;background-color:var.$mainColor;
   a,button{color:#fff;}
   h1{font-size:20px;
-    a{font-weight:700;letter-spacing:-.01em;
-      &::before{@include mixin.shape(38px,42px);background:url(../images/main_logo.png) 0 no-repeat;margin-right:10px;}
+    a{font-weight:600;letter-spacing:-.01em;
+      &::before{@include mixin.shape(73px,24px);background:url(../images/main_logo.png) 0 no-repeat;margin-right:15px;}
     }
   }
 }
@@ -429,7 +429,7 @@ nav{width:220px;border-right:1px solid var.$border;box-shadow:0 4px 5px #0000003
 
 /* pop common */
 ::backdrop{position:fixed;z-index:9999;top:0;left:0;width:100%;height:100%;background-color: rgba(0, 0, 0, 0.3);}
-.pop_wrap{min-width:600px;position:fixed;top:50%;left:50%;transform:translateX(-50%) translateY(-50%);padding:30px 35px;border:1px solid #2a3652;box-shadow:0 2px 3px 0 rgba(0, 0, 0, .49);}
+.pop_wrap{min-width:700px;position:fixed;top:50%;left:50%;transform:translateX(-50%) translateY(-50%);padding:30px 35px;border:1px solid #2a3652;box-shadow:0 2px 3px 0 rgba(0, 0, 0, .49);}
 .pop_body{max-height:calc(100vh - 200px);margin:1px;overflow-y:auto;background-color:#fff;
   .tit:has(h2){border-bottom:1px solid #005aab;margin-bottom:10px;padding-bottom:5px;
     h2{font-size:16px;color:#005aab;}
