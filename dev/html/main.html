@@ -1,92 +1,117 @@
 @@include('../inc/top.html')
 <div id="wrap" class="wrap">
   @@include('../inc/header.html')
-  <main id="content" class="main_container">
-    <aside>
-      <div class="aside_wrap">
-        <div class="aside_btn">
-          <button type="button" class="btn_add" popovertarget="add_disaster">재난정보 추가</button>
-        </div>
-        <div class="tab">
-          <ul>  
-            <li class="on"><a href="#tab01">관할재난</a></li>
-            <li><a href="#tab02">종료재난</a></li>
+  <main id="content" class="main-container">
+    <aside class="aside disaster-panel">    
+      <div class="aside-wrap">
+        <header class="aside-head">
+          <div class="btn-group aside-head__tabs">
+            <button class="btn secondary on">관할재난</button>
+            <button class="btn secondary">종료재난</button>
+          </div>
+          <div class="aside-head__tools">
+            <button type="button" class="btn link" popovertarget="add_disaster">+ 재난정보 추가</button>                   
+          </div>
+        </header>
+          <!-- <ul class="disaster_lst" data-empty="데이터 없음"></ul> -->
+          <ul class="disaster-panel__list">
+            <li class="disaster-card" data-empty="데이터 없음"></li>
+            <li class="disaster-card">
+              <dl class="disaster-card__meta">
+                <dt>
+                  <i class="hazard-icon" data-event-cd="HRA"></i>
+                  <a class="disaster-card__link" href="main_dtl.html">25년 7월 안양천 범람 재난대응</a>
+                </dt>
+                <dd><strong>재난위치</strong>서울시(양천구)</dd>
+                <dd><strong>발생일시</strong>2025-10-10 12:34:56</dd>
+                <dd><strong>통보일시</strong>2025-10-10 12:34:56</dd>                  
+              </dl>
+              <div class="disaster-card__badges">
+                <span class="stat stat--ongoing">진행중</span>
+                <div class="type">
+                  <span class="manual">수동</span><span class="real">실제</span>
+                </div>
+              </div>
+            </li>
+            <li class="disaster-card">
+              <dl class="disaster-card__meta">
+                <dt>
+                  <span class="hazard-icon" data-event-cd="DBW"></span>
+                  <a class="disaster-card__link" href="main_dtl.html">25년 7월 안양천 범람 재난대응</a>
+                </dt>
+                <dd><strong>재난위치</strong>서울시(양천구)</dd>
+                <dd><strong>발생일시</strong>2025-10-10 12:34:56</dd>
+                <dd><strong>통보일시</strong>2025-10-10 12:34:56</dd>                  
+              </dl>
+              <div class="disaster-card__badges">
+                <span class="stat stat--ongoing">진행중</span>
+                <div class="type">
+                  <span class="manual">수동</span><span class="real">실제</span>
+                </div>
+              </div>
+            </li>
+            <li class="disaster-card">
+              <dl class="disaster-card__meta">
+                <dt>
+                  <i class="hazard-icon" data-event-cd="DFD"></i>
+                  <a class="disaster-card__link" href="main_dtl.html">25년 7월 안양천 범람 재난대응</a>
+                </dt>
+                <dd><strong>재난위치</strong>서울시(양천구)</dd>
+                <dd><strong>발생일시</strong>2025-10-10 12:34:56</dd>
+                <dd><strong>통보일시</strong>미통보</dd>
+              </dl>
+              <div class="disaster-card__badges">
+                <span class="stat stat--await">대기중</span>
+                <div class="type">
+                  <span class="auto">자동</span><span class="test">시험</span>
+                </div>
+              </div>
+            </li>
+            <li class="disaster-card">
+              <dl class="disaster-card__meta">
+                <dt>
+                  <i class="hazard-icon" data-event-cd="BCS"></i>
+                  <a class="disaster-card__link" href="main_dtl.html">25년 7월 안양천 범람 재난대응</a>
+                </dt>
+                <dd><strong>재난위치</strong>서울시(양천구)</dd>
+                <dd><strong>발생일시</strong>2025-10-10 12:34:56</dd>
+                <dd><strong>통보일시</strong>2025-10-10 12:34:56</dd>
+              </dl>
+              <div class="disaster-card__badges">
+                <span class="stat stat--done">종료</span>
+                <div class="type">
+                  <span class="auto">자동</span><span class="training">훈련</span>
+                </div>
+              </div>
+            </li>
           </ul>
-        </div>
-        <div class="tab_container">
-          <section id="tab01" class="tab_cont">
-            <div class="filter"><button type="button" class="btn_filter">상세조건 검색 +</button></div>
-            <!-- <ul class="disaster_lst" data-empty="현재 입력된 재난이 없습니다."></ul> -->
-            <ul class="disaster_lst" data-empty="현재 입력된 재난이 없습니다.">
-              <li>
-                <a href="../html/main_dtl.html">
-                  <div class="type">
-                    <i class="manual">수동</i><i class="real">실제</i>
-                  </div>
-                  <dl class="desc">
-                    <dt><img src="../images/symbol/FLN.png" class="disaster_symbol" alt="홍수경보"><strong>25년 7월 안양천 범람 재난대응</strong></dt>
-                    <dd><strong>재난위치</strong>서울시(양천구)</dd>
-                    <dd><strong>발생일시</strong>2025-10-10 12:34:56</dd>
-                    <dd><strong>통보일시</strong>2025-10-10 12:34:56</dd>
-                    <dd><i class="status_ongoing">진행중</i></dd>
-                  </dl>
-                </a>
-              </li>
-              <li>
-                <a href="main_dtl.html">
-                  <div class="type">
-                    <i class="auto">자동</i><i class="test">시험</i>
-                  </div>
-                  <dl class="desc">
-                    <dt><img src="../images/symbol/FLN.png" class="disaster_symbol" alt="홍수경보"><strong>25년 7월 안양천 범람 재난대응</strong></dt>
-                    <dd><strong>재난위치</strong>서울시(양천구)</dd>
-                    <dd><strong>발생일시</strong>2025-10-10 12:34:56</dd>
-                    <dd><strong>통보일시</strong>미통보</dd>
-                    <dd><i class="status_await">대기중</i></dd>
-                  </dl>
-                </a>
-              </li>
-              <li>
-                <a href="main_dtl.html">
-                  <div class="type">
-                    <i class="auto">자동</i><i class="training">훈련</i>
-                  </div>
-                  <dl class="desc">
-                    <dt><img src="../images/symbol/FLN.png" class="disaster_symbol" alt="홍수경보"><strong>25년 7월 안양천 범람 재난대응</strong></dt>
-                    <dd><strong>재난위치</strong>서울시(양천구)</dd>
-                    <dd><strong>발생일시</strong>2025-10-10 12:34:56</dd>
-                    <dd><strong>통보일시</strong>2025-10-10 12:34:56</dd>
-                    <dd><i class="status_done">종료</i></dd>
-                  </dl>
-                </a>
-              </li>
-            </ul>
-          </section>
-          <section id="tab02" class="tab_cont">
-          </section>
-        </div>
       </div>            
     </aside>
-    <section class="main_cont map_content">
-      <div class="btn_wrap btn_map">
-        <button class="btn" id="mapmode_1" onclick="mapMode(1)">기본지도</button>
-        <button class="btn on" id="mapmode_2" onclick="mapMode(2)">2D지도</button>
-        <button class="btn" id="mapmode_3" onclick="mapMode(3)">위성지도</button>
-      </div>
-      <div class="symbols">
-        <div class="layer" style="left:200px;top:200px;">
-          <img src="../images/symbol/FLN.png" class="disaster_symbol" alt="홍수경보">
-          <div class="desc">            
-            <i class="status_ongoing">진행중</i>
-            <strong>25년 7월 안양천 범람 재난대응</strong>
-            <p class="date">2025-10-10 12:34</p>
-          </div>          
+    <section class="main-cont map-wrap">
+      <div class="map__canvas">
+        <div class="btn_wrap map-mode">
+          <button class="map-mode__btn" id="mapmode_1" onclick="mapMode(1)">기본</button>
+          <button class="map-mode__btn is-active" id="mapmode_2" onclick="mapMode(2)">2D</button>
+          <button class="map-mode__btn" id="mapmode_3" onclick="mapMode(3)">위성</button>
         </div>
+        <div class="map-tooltip" style="left:500px;top:300px;">
+          <div class="map-tooltip__item">
+            <i class="hazard-icon" data-event-cd="FLN"></i>
+            <p class="map-tooltip__text">25년 11월 포항시 호우주의보 발령</p>
+          </div>
+          <div class="map-tooltip__item">
+            <i class="hazard-icon" data-event-cd="LDW"></i>
+            <p class="map-tooltip__text">극한호우 도시 침수 테스트</p>
+          </div>
+          <div class="map-tooltip__item">
+            <i class="hazard-icon" data-event-cd="AVA"></i>
+            <p class="map-tooltip__text">극한호우 도시 침수 테스트</p>
+          </div>
+        </div>     
       </div>
     </section>
   </main>
 </div>
-<!-- @@include('../inc/script.html') -->
 <dialog id="add_disaster" class="pop_wrap" popover="manual">
   <header class="pop_tit">
     <h1>재난정보 추가 / 수정</h1>
@@ -200,5 +225,6 @@
     <button type="button" class="btn_close" popovertargetaction="close" popovertarget="add_disaster">닫기</button>
   </div>
 </dialog>
+@@include('../inc/script.html')
 </body>
 </html>

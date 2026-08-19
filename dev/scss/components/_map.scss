@@ -1,0 +1,24 @@
+@use '../abstracts/' as *;
+@layer components{
+  .map{
+    &-wrap{flex:1;position:relative;min-height:150px;}
+    &__canvas{flex:1;position:relative;min-height:0;background-color:var(--bg-map-grad);
+      .ico-pin{@include shape(36px,52px);position:absolute;background:url(../images/pin.png) 0 0 no-repeat;}
+    }    
+    &-tooltip{position:absolute;min-width:220px;background:#fff;box-shadow:var(--shadow-panel);padding:$sp-6 $sp-14;border:1px solid var(--border-subtle);border-radius:$rad-14;
+      &__item{@include flex($align:center);gap:8px;padding:$sp-8 0;
+        + .map-tooltip__item{border-top:1px solid var(--border-subtle);}
+      } 
+      &__text{font-size:13px;line-height:1.4;color:#222;}
+    }
+    &-mode{position:absolute;right:10px;top:10px;display:flex;gap:5px;z-index:10;
+      &__btn{width:46px;padding:25px 0 1px;background:url(../images/map_type.png) 50% no-repeat, #fff;
+      outline:1px solid var(--border-subtle);font-size:11px;border-radius:$rad-8;line-height:1;box-sizing:content-box;color:var(--text-muted);@include fw(500);
+        @for $i from 1 through 3{
+          &:nth-of-type(#{$i}){background-position-y:-44px * ($i - 1);}
+        }
+        &.is-active, &:hover{color:$mainColor;outline-color:$mainColor;}
+      }
+    }
+  }
+}

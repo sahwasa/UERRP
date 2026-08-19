@@ -1,0 +1,61 @@
+@use '../abstracts/' as *;
+@layer components {
+
+  // ══════════════════════════════════════════
+  // TABLE — 목록 테이블 (관리자 표준)
+  // ══════════════════════════════════════════
+  .tbl-wrap {
+    flex:1;min-height:0;
+    background:var(--bg-panel);
+    border:1px solid var(--border-subtle);
+    border-radius:var(--radius-lg);
+    overflow-y:auto;
+    box-shadow:var(--shadow-panel);
+
+    table,
+    .tbl_default { width:100%; border-collapse:collapse; font-size:13px; }
+
+    thead{position:sticky;left:0;top:0;z-index:z(header);
+      &::after{@include shape(100%, 1px);position:absolute;left:0;bottom:0;background-color:var(--border-subtle);}
+    }
+    tbody{position:relative;
+      &::after{@include shape(100%, 1px);position:absolute;left:0;bottom:-1px;background-color:var(--border-subtle);}
+    }
+
+    th {
+      text-align:left; padding:12px 16px;
+      font-size:11px; color:var(--text-faint);
+      text-transform:uppercase; letter-spacing:.06em;
+      background:var(--bg-panel-soft);
+      border-bottom:1px solid var(--border-subtle);
+      font-variation-settings:'wght' 700;
+    }
+
+    td {
+      padding:12px 16px;
+      border-bottom:1px solid var(--border-subtle);
+      color:var(--text-primary); vertical-align:middle;
+      transition:background .12s;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+
+      &.td-wrap { white-space:normal; word-break:keep-all; overflow:visible; text-overflow:clip; }
+      &.td-mono { font-family:'JetBrains Mono','Consolas',monospace; font-size:12px; color:var(--info); }
+      &.td-bold { color:var(--text-strong); font-variation-settings:'wght' 700; }
+      &.td-center { text-align:center; }
+    }
+
+    tbody tr {
+      transition:background .12s;
+      &:hover td { background:var(--bg-input-hover); }
+      &:last-child td { border-bottom:0; }
+    }
+    
+    .row-empty td{text-align: center;color:var(--text-faint);white-space:normal;padding:48px 32px;
+      &::before{display:block;content:"◯";font-size:$font-size-24;opacity:.4;margin-bottom:$sp-8;}
+    }
+
+    .icon-only{color:var(--text-faint);
+      &:hover{color:var(--color-primary-strong);}
+    }
+  }
+}

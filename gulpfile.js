@@ -7,6 +7,7 @@ const { src, dest, lastRun, watch, series, parallel } = require("gulp"),
       sass = require('gulp-sass')(require('sass')),     // scss 컴파일
       newer = require("gulp-newer"),                    // dist 폴더의 결과물보다 최신의 timestamp를 가진 경우만 실행
       del = require('del'),
+      // config = require('./gulp.config'),
       bs = require("browser-sync").create();            // browser-sync 호출, create 메서드로 생성을 먼저 해줘야 함(브라우저 자동 *refresh 어플리케이션)
 
 // babel = require("gulp-babel"),                    // js 컴파일
@@ -20,10 +21,15 @@ const dist = "dist";
 
 // 작업용 폴더 파일 path
 const path = {
-  html:dev + "/**/*.html",
-  scss: dev + "/scss/*.scss",
-  js: dev + "/js/*.js",
-  images: dev + "/**/images/**/*"
+  html: [
+    dev + "/**/*.html",
+    "!" + dev + "/**/inc/**/*.html"   // ⭐ inc 폴더 제외
+  ],
+  htmlWatch: dev + "/**/*.html", 
+  scss: dev + "/scss/**/*.scss",
+  js: dev + "/js/**/*",
+  images: dev + "/**/images/**/*",
+  fonts: dev + "/font/**/*"
 };
 
 // js, scss concat(병합) 시 파일 이름 지정
@@ -33,24 +39,33 @@ var mergefileName = {
 };
 
 // browser-sync index file
-const browserSyncFileName = "/html/login.html";
+const browserSyncFileName = "login.html";
 
 // 배포 시 삭제할 폴더
 const cleanPaths = [
-  dist + '/**/temp' 
+  dist + '/css/**/*',           // CSS 전체
+  dist + '/js/**/*',            // JS 전체 
+  dist + '/**/*.html',          // HTML 전체
+  dist + '/font/**/*',
+  dist + '/images/**/*_tmp*',   // ✅ 추가: 임시 이미지 파일
+  dist + '/**/temp'             // temp 폴더
 ];
 
 // task start
 function inc(){
   return merge(
-    src(path.html)
+    src(path.html,{ base: dev + '/html' })
     .pipe(gulpInc({
       prefix : '@@',
-      basepath : '@file'
+      basepath : dev + '/html'
     }))
     .pipe(dest(dist + '/'))
     .pipe(bs.stream())
   )
+}
+function fonts() {
+  return src(dev + '/font/**/*')
+    .pipe(dest(dist + '/font/'));
 }
 function imgMin(){
   return src(path.images,)
@@ -67,14 +82,11 @@ var scssOptions = {
   indentWidth : 1,// 들여쓰기 갯수 / default: 2  
   sourceComments: false // 컴파일 된 css에 원본 소스이 위치와 줄 수 주석 표시
 }
-
 function scss(){
   return merge(
-    src([path.scss], {sourcemaps: true })
-    //.pipe(concat(mergefileName.style))
+    src([path.scss, '!' + dev + "/scss/**/_*.scss"], {sourcemaps: true })
     .pipe(sass(scssOptions).on('error', sass.logError))
-    //.pipe(sourcemaps.write('/maps'))
-    .pipe(dest(dist + '/css',{ sourcemaps: true }))
+    .pipe(dest(dist + '/css', { sourcemaps: './maps' }))
     .pipe(bs.stream())
   )
 }
@@ -86,6 +98,11 @@ function js(){
     .pipe(bs.stream())
   )
 }
+function copyVendor(){
+  return src('node_modules/lucide/dist/umd/lucide.js')
+    .pipe(dest('dist/js/vendor'));
+}
+
 function setBs(){
   bs.init({
     server :{
@@ -95,13 +112,20 @@ function setBs(){
   });
 }
 function watchs(){  
-  watch(path.html, inc);
+  watch(path.htmlWatch, inc);
   watch(path.images, imgMin);
   watch(path.js, js);
   watch(path.scss, scss);  
+  watch(path.fonts, fonts);
 }
   
-
+// 배포용 압축 태스크 추가
+function deploy() {
+  const today = new Date().toISOString().slice(0,10);
+  return src(dist + '/**/*')
+    .pipe(archiver('publish_' + today + '.zip'))
+    .pipe(dest('./'));
+}
 // dist 폴더 정리
 function clean(cd){
   return del(cleanPaths,cd).then(paths => {
@@ -120,13 +144,15 @@ function clean(cd){
 
 
 module.exports = {
-  default:series(clean, inc, parallel(js,scss,imgMin), parallel(watchs, setBs)),
+  default:series(clean, inc, parallel(js,scss,imgMin,fonts,copyVendor), parallel(watchs, setBs)),
   watch:parallel(watchs, setBs),
-  build:series(clean, parallel(inc,js,scss,imgMin)),
+  build:series(clean, parallel(inc,js,scss,imgMin,fonts)),
+  deploy: series(clean, parallel(inc, js, scss, imgMin,fonts), deploy),
   clean : clean,
   inc : inc,
-  js : js,
+  js: js,
   scss : scss,
   imgMin : imgMin,
   setBs : setBs,
+  copyVendor : copyVendor
 };

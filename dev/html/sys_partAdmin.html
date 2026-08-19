@@ -1,45 +1,36 @@
 @@include('../inc/top.html')
 <div id="wrap" class="wrap">
   @@include('../inc/header.html')
-  <main id="content" class="main_container">
-    <nav>
-      <header>
+  <main id="content" class="main-container">
+    <nav class="nav lnb">
+      <div class="lnb-wrap">
         <h1>시스템관리</h1>
-      </header>
-      <ul>
-        <li><a href="sys_userAdmin.html">사용자관리</a></li>
-        <li class="on"><a href="sys_partAdmin.html">재난대응 부서관리</a></li>
-      </ul>
-    </nav>
-    <section class="sub_cont">
-      <section class="bredcrumb">
-        <ul>
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>시스템관리</li>
-          <li>재난대응 부서관리</li>
+        <ul class="lnb-list">
+          <li><a class="nav-item" href="sys_userAdmin.html">사용자관리</a></li>
+          <li><a class="nav-item nav-active" href="sys_partAdmin.html">재난대응 부서관리</a></li>
         </ul>
-      </section>
-      <header class="tit">
-        <h1>재난대응 부서관리</h1>        
+      </div>
+    </nav>
+    <section class="sub__container">     
+      <header class="sub__heading">
+        <h2 class="sub__title">재난대응 부서관리</h2>
       </header>
-      <div class="cont flex_wrap part_admin">
+      <div class="sub__cont flex-wrap">
         <section class="section">
-          <header class="tit">
-            <h2>소속기관</h2>
+          <header class="toolbar-card">
+            <h3 class="card-title">소속기관</h3>
             <div class="tool">
-              <button type="button" class="btn_addition" popovertarget ="part_edit">추가</button>
-              <button type="button" class="btn_modify" popovertarget ="part_edit">수정</button>
-              <button type="button" class="btn_delete">삭제</button>
+              <button type="button" class="btn primary" popovertarget ="part_edit">추가</button>
+              <button type="button" class="btn outline" popovertarget ="part_edit">수정</button>
+              <button type="button" class="btn outline-danger">삭제</button>
             </div>
           </header>
-          <div class="tbl_wrap">
-            <table class="tbl_default tbl_hover">
+          <div class="tbl-wrap">
+            <table>
               <caption>기관 목록</caption>
               <thead>
                 <tr>
-                  <th scope="col"><input type="radio" class="type_check" title="전체 선택"></th>
+                  <th scope="col"><input type="checkbox" class="type_check" title="전체 선택"></th>
                   <th scope="col">소속기관 코드</th>
                   <th scope="col">소속기관명</th>
                   <th scope="col">설명</th>
@@ -53,57 +44,57 @@
                   <td>ㅇㅇ시청</td>
                   <td>상세설명</td>
                   <td>
-                    <div class="switch_toggle">
-                      <input type="radio" class="type_check" id="useYN0" checked>
+                    <div class="toggle">
+                      <input type="checkbox" class="type_check" id="useYN0" checked>
                       <label for="useYN0">사용여부</label>
                     </div>
                   </td>
                 </tr>              
                 <tr>
-                  <td><input type="radio" class="type_check" title="줄선택"></td>
+                  <td><input type="checkbox" class="type_check" title="줄선택"></td>
                   <td>-</td>
                   <td>ㅇㅇ시청</td>
                   <td>상세설명</td>
                   <td>
-                    <div class="switch_toggle">
-                      <input type="radio" class="type_check" id="useYN1">
+                    <div class="toggle">
+                      <input type="checkbox" class="type_check" id="useYN1">
                       <label for="useYN1">사용여부</label>
                     </div>
                   </td>
                 </tr>              
                 <tr>
-                  <td><input type="radio" class="type_check" title="줄선택"></td>
+                  <td><input type="checkbox" class="type_check" title="줄선택"></td>
                   <td>-</td>
                   <td>ㅇㅇ시청</td>
                   <td>상세설명</td>
                   <td>
-                    <div class="switch_toggle">
-                      <input type="radio" class="type_check" id="useYN1">
-                      <label for="useYN1">사용여부</label>
+                    <div class="toggle">
+                      <input type="checkbox" class="type_check" id="useYN2">
+                      <label for="useYN2">사용여부</label>
                     </div>
                   </td>
                 </tr>              
                 <tr>
-                  <td><input type="radio" class="type_check" title="줄선택"></td>
+                  <td><input type="checkbox" class="type_check" title="줄선택"></td>
                   <td>-</td>
                   <td>ㅇㅇ시청</td>
                   <td>상세설명</td>
                   <td>
-                    <div class="switch_toggle">
-                      <input type="radio" class="type_check" id="useYN1">
-                      <label for="useYN1">사용여부</label>
+                    <div class="toggle">
+                      <input type="checkbox" class="type_check" id="useYN3">
+                      <label for="useYN3">사용여부</label>
                     </div>
                   </td>
                 </tr>              
                 <tr>
-                  <td><input type="radio" class="type_check" title="줄선택"></td>
+                  <td><input type="checkbox" class="type_check" title="줄선택"></td>
                   <td>-</td>
                   <td>ㅇㅇ시청</td>
                   <td>상세설명</td>
                   <td>
-                    <div class="switch_toggle">
-                      <input type="radio" class="type_check" id="useYN1">
-                      <label for="useYN1">사용여부</label>
+                    <div class="toggle">
+                      <input type="checkbox" class="type_check" id="useYN4">
+                      <label for="useYN4">사용여부</label>
                     </div>
                   </td>
                 </tr>              
@@ -112,20 +103,20 @@
           </div>
         </section>
         <section class="section">
-          <header class="tit">
-            <h2>부서</h2>
+          <header class="toolbar-card">
+            <h3 class="card-title">부서</h3>
             <div class="tool">
-              <button type="button" class="btn_addition" popovertarget ="part_edit">추가</button>
-              <button type="button" class="btn_modify" popovertarget ="part_edit">수정</button>
-              <button type="button" class="btn_delete">삭제</button>
+              <button type="button" class="btn primary" popovertarget ="part_edit">추가</button>
+              <button type="button" class="btn outline" popovertarget ="part_edit">수정</button>
+              <button type="button" class="btn outline-danger">삭제</button>
             </div>
           </header>
-          <div class="tbl_wrap">
-            <table class="tbl_default">
+          <div class="tbl-wrap">
+            <table>
               <caption>부서 목록</caption>
               <thead>
                 <tr>
-                  <th scope="col"><input type="radio" class="type_check" title="전체 선택"></th>
+                  <th scope="col"><input type="checkbox" class="type_check" title="전체 선택"></th>
                   <th scope="col">소속부서 코드</th>
                   <th scope="col">소속부서명</th>
                   <th scope="col">설명</th>
@@ -134,26 +125,26 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><input type="radio" class="type_check" title="줄선택"></td>
+                  <td><input type="checkbox" class="type_check" title="줄선택"></td>
                   <td>-</td>
                   <td>ㅇㅇ시청</td>
                   <td>상세설명</td>
                   <td>
-                    <div class="switch_toggle">
-                      <input type="radio" class="type_check" id="useYN0" checked>
-                      <label for="useYN0">사용여부</label>
+                    <div class="toggle">
+                      <input type="checkbox" class="type_check" id="useYN5" checked>
+                      <label for="useYN5">사용여부</label>
                     </div>
                   </td>
                 </tr>              
                 <tr>
+                  <td><input type="checkbox" class="type_check" title="줄선택"></td>
                   <td>-</td>
-                  <td><input type="radio" class="type_check" title="줄선택"></td>
                   <td>ㅇㅇ시청</td>
                   <td>상세설명</td>
                   <td>
-                    <div class="switch_toggle">
-                      <input type="radio" class="type_check" id="useYN1">
-                      <label for="useYN1">사용여부</label>
+                    <div class="toggle">
+                      <input type="checkbox" class="type_check" id="useYN6">
+                      <label for="useYN6">사용여부</label>
                     </div>
                   </td>
                 </tr>                           
@@ -166,49 +157,71 @@
   </main>
 </div>
 <!-- @@include('../inc/script.html') -->
-<dialog id="part_edit" class="pop_wrap" popover="manual">
-  <header class="pop_tit">
-    <h1>소속기관 or 부서 추가 / 수정</h1>
-    <button type="button" class="btn_cross" popovertargetaction="close" popovertarget="part_edit"></button>
+<dialog id="part_edit" class="modal modal-part__edit" popover="manual">
+  <header class="modal__heading">
+    <h2 class="modal__title">소속기관 or 부서 추가 / 수정</h2>
+    <button type="button" class="modal__close btn ghost icon-only" popovertargetaction="close" popovertarget="part_edit"><i data-lucide="x"></i>팝업 닫기</button>
   </header>
-  <div class="pop_body">
-    <dl class="ipt_dl">
-      <dt class="required"><label for="">소속기관 코드</label></dt>
-      <dd>
-        <div class="ipt_group">
-          <input type="text"><button type="button" class="btn_sub_line">중복확인</button>
+
+  <section class="modal__body">
+    <div class="form-grid">
+      <div class="field full">
+        <label>소속기관 코드 <span class="req">*</span></label>
+        <div class="input-wrap has-sfx">
+          <input class="input error" type="text">
+          <button type="button" class="sfx clickable">중복확인</button>
         </div>
-        <p class="invalid">중복된 코드입니다.</p>
-      </dd>
-      <dt class="required"><label for="">소속기관</label></dt>
-      <dd><input type="text"></dd>
-      <dt><label for="">설명</label></dt>
-      <dd><input type="text"></dd>
-      <dt><label for="">사용여부</label></dt>
-      <dd>
-        <div class="switch_toggle">
-          <input type="radio" class="type_check" id="useYNpop1">
-          <label for="useYNpop1">사용여부</label>
+        <div class="err">중복된 코드입니다.</div>
+      </div>
+
+      <div class="field full">
+        <label>소속기관 <span class="req">*</span></label>
+        <input class="input" type="text">
+      </div>
+
+      <div class="field full">
+        <label>설명</label>
+        <input class="input" type="text">
+      </div>
+
+      <div class="field full">
+        <label>사용여부</label>
+        <div class="toggle">
+          <input type="checkbox" class="type_check" id="useYNp1">
+          <label for="useYNp1">사용여부</label>
         </div>
-      </dd>
-      <dt>소속기관 (부서 추가 수정일때)</dt>
-      <dd><span>ㅇㅇ시청</span></dd>
-      <dt class="required"><label for="">부서명</label></dt>
-      <dd><input type="text"></dd>
-      <dt><label for="">설명</label></dt>
-      <dd><input type="text"></dd>
-      <dd>
-        <div class="switch_toggle">
-          <input type="radio" class="type_check" id="useYNpop2">
-          <label for="useYNpop2">사용여부</label>
+      </div>
+
+      <!-- <div class="field full">
+        <label>소속기관 (부서 추가 수정일때)</label>
+        <input class="input" type="text" readonly value="ㅇㅇ시청">
+      </div>
+
+      <div class="field full">
+        <label>부서명 <span class="req">*</span></label>
+        <input class="input" type="text">
+      </div>
+
+      <div class="field full">
+        <label>설명</label>
+        <input class="input" type="text">
+      </div>
+
+      <div class="field full">
+        <label>사용여부</label>
+        <div class="toggle">
+          <input type="checkbox" class="type_check" id="useYNp2">
+          <label for="useYNp2">사용여부</label>
         </div>
-      </dd>
-    </dl>
-  </div>
-  <div class="pop_foot">
-    <button type="button" class="btn_default">저장 </button>
-    <button type="button" class="btn_close" popovertargetaction="close" popovertarget="part_edit">닫기</button>
+      </div> -->
+    </div>
+  </section>
+
+  <div class="modal__footer">
+    <button type="button" class="btn primary">저장</button>
+    <button type="button" class="btn secondary">닫기</button>
   </div>
 </dialog>
+@@include('../inc/script.html')
 </body>
 </html>
