@@ -12,7 +12,7 @@ document.body.insertAdjacentHTML('afterbegin', `
 
 async function loadHazardIconMap() {
   if (hazardIconMap) return hazardIconMap;
-  const res = await fetch('js/data/hazard_icon_mapping.json');
+  const res = await fetch('../js/data/hazard_icon_mapping.json');
   const list = await res.json();
   hazardIconMap = Object.fromEntries(list.map(item => [item.event_cd, item]));
   return hazardIconMap;
@@ -27,7 +27,7 @@ async function fillHazardIcon(el) {
 
   el.classList.add(`hazard-icon--${level}`);
   el.insertAdjacentHTML('beforeend',
-    `<img class="hazard-icon__glyph" src="images/hazard_icon/${iconFile}" alt="${info.event || eventCd}">
+    `<img class="hazard-icon__glyph" src="../images/hazard_icon/${iconFile}" alt="${info.event || eventCd}">
     <svg class="hazard-icon__triangle" viewBox="0 0 22 20">
       <use href="#hazard-triangle"/>
     </svg>`
