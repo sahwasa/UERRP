@@ -73,13 +73,13 @@
   // ── 버튼 그룹 (단일 선택) ──
   .btn-group {
     display:inline-flex;
-    .btn {
+    .btn {border:1px solid var(--border-subtle);color:var(--text-muted);background-color:var(--bg-input);
       border-radius:0;
       &:first-child { border-radius:8px 0 0 8px; }
       &:last-child { border-radius:0 8px 8px 0; }
       &:not(:first-child) { margin-left:-1px; }
       &.on {
-        background:#fff; color:var(--color-primary-strong);
+        background-color:#fff; color:var(--color-primary-strong); border-color:var(--color-primary-strong);
         font-variation-settings:'wght' 700; box-shadow:0 1px 3px rgba(15,23,42,.1);
         z-index:1; position:relative;
       }

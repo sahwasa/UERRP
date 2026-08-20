@@ -20,7 +20,7 @@
       &:focus{border-bottom:2px solid var(--color-primary-strong);margin-bottom:-1px;outline:none;}
     }
   }
-  [for="remember"]{@include flex($align:center);gap:$sp-8;color:#475569;font-size:13px;}
+  .login--remember{@include flex($align:center);gap:$sp-8;color:#475569;font-size:13px;}
   .btn_login{line-height:76px;border-radius:37px;background:linear-gradient(135deg,#3b82f6 0%,#2563eb 100%);font-size:20px;color:#fff;margin-top:15%;text-align:center;letter-spacing:-1.5px;@include fw(700);
   transition: transform .12s,box-shadow .15s,opacity .15s;
     &:hover{transform: translateY(-1px); box-shadow: 0 6px 18px #2563eb59;} 

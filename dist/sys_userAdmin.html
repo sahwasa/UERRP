@@ -150,7 +150,13 @@
         <h2 class="sub__title">사용자 관리</h2>
       </header>
       <div class="sub__cont">
-        <div class="toolbar-card">          
+        <div class="toolbar-card"> 
+          <div class="btn-group">
+            <button class="btn btn-sm on">전체</button>
+            <button class="btn btn-sm">관리자</button>
+            <button class="btn btn-sm">운영자</button>
+            <button class="btn btn-sm">사용자</button>
+          </div>                   
           <div class="search-box">
             <i data-lucide="search"></i>
             <input placeholder="사용자ID · 사용자명 · 소속기관">
@@ -158,6 +164,7 @@
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"></path></svg>
             </button>
           </div>         
+          <button type="button" class="btn primary" onclick="loadUserList(1)">검색</button>
           <div class="tool">
             <button type="button" class="btn outline" popovertarget="user_edit">추가</button>
             <button type="button" class="btn outline-danger">삭제</button>
