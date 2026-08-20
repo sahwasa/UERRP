@@ -1894,6 +1894,19 @@
   .tbl-wrap .icon-only:hover {
     color: var(--color-primary-strong);
   }
+  .tbl--fixed.tbl--checkbox th:first-of-type, .tbl--fixed.tbl--checkbox td:first-of-type {
+    width: 60px;
+    text-align: center;
+  }
+  .tbl--fixed.tbl--action-1 th:last-of-type, .tbl--fixed.tbl--action-1 td:last-of-type {
+    width: 100px;
+    text-align: center;
+  }
+  .tbl--fixed.tbl--action-2 th:last-of-type, .tbl--fixed.tbl--action-2 td:last-of-type,
+  .tbl--fixed.tbl--action-2 th:nth-last-of-type(2), .tbl--fixed.tbl--action-2 td:nth-last-of-type(2) {
+    width: 100px;
+    text-align: center;
+  }
 }
 @layer components {
   .pagination {

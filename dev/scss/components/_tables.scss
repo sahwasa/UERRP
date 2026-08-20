@@ -58,4 +58,16 @@
       &:hover{color:var(--color-primary-strong);}
     }
   }
+  .tbl--fixed{
+    &.tbl--checkbox{
+      th:first-of-type, td:first-of-type{ width:60px; text-align:center; }
+    }
+    &.tbl--action-1{
+      th:last-of-type, td:last-of-type{ width:100px; text-align:center; }
+    }
+    &.tbl--action-2{
+      th:last-of-type, td:last-of-type,
+      th:nth-last-of-type(2), td:nth-last-of-type(2){ width:100px; text-align:center; }
+    }
+  }
 }
