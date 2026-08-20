@@ -41,10 +41,12 @@
   }
   .disaster-card{@include card($min-height:136.5px);
     &__meta{gap:$sp-8;color:var(--text-muted);
-      dt{margin-bottom:$sp-8;}
+      dt{@include flex;gap:$sp-6;margin-bottom:$sp-8;}
       strong{color:var(--text-primary);margin-right:$sp-6;}
-    }    
+    }
+    &__link{@include ellipsis;}
     &__badges{@include flex($align:center);margin-top:$sp-8;}
+    &__dot{margin-left:auto;flex-shrink:0;width:6px;height:6px;border-radius:50%;background:var(--status-live); }
   }
   $_types:(auto:#a587dc,manual:#b4a882,real:#d17887,test:#70a6a7,training:#6094c5);
   .type{@include flex;gap:2px;margin-left:auto;

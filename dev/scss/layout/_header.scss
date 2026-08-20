@@ -86,8 +86,8 @@
 			}
 		}
 		&-clock{text-align:right;
-			&-label { color: var(--text-faint); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 2px; font-size: 9px; @include fw(600);}
-			&-value { color: var(--text-primary); letter-spacing: .04em; font-family: monospace; font-size: 13px; @include fw(700);}
+			&-label { color: var(--text-faint); letter-spacing: .08em; text-transform: uppercase;font-size:$font-size-11; @include fw(600);}
+			&-value { color: var(--text-primary); letter-spacing: .04em; font-family: monospace; font-size:$font-size-15; @include fw(700);}
 		}
 	}
 

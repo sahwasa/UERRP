@@ -220,6 +220,17 @@
     visibility: hidden;
     overflow: hidden;
   }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
   .align_l {
     text-align: left;
   }
@@ -822,8 +833,7 @@
     color: var(--text-faint);
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    margin-bottom: 2px;
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 600;
     font-variation-settings: "wght" 600;
   }
@@ -831,7 +841,7 @@
     color: var(--text-primary);
     letter-spacing: 0.04em;
     font-family: monospace;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
     font-variation-settings: "wght" 700;
   }
@@ -2885,11 +2895,23 @@
     color: var(--text-muted);
   }
   .disaster-card__meta dt {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 6px;
     margin-bottom: 8px;
   }
   .disaster-card__meta strong {
     color: var(--text-primary);
     margin-right: 6px;
+  }
+  .disaster-card__link {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
   }
   .disaster-card__badges {
     display: flex;
@@ -2897,6 +2919,14 @@
     align-items: center;
     flex-direction: row;
     margin-top: 8px;
+  }
+  .disaster-card__dot {
+    margin-left: auto;
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--status-live);
   }
   .type {
     display: flex;
