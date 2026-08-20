@@ -2920,13 +2920,24 @@
     flex-direction: row;
     margin-top: 8px;
   }
-  .disaster-card__dot {
+  .disaster-card__indicator {
+    position: relative;
     margin-left: auto;
     flex-shrink: 0;
-    width: 6px;
-    height: 6px;
+  }
+  .disaster-card__indicator::before {
+    position: absolute;
+    right: -3px;
+    top: 0px;
+    display: inline-block;
+    content: "";
+    overflow: hidden;
+    font-size: 0;
+    width: 3px;
+    height: 3px;
+    vertical-align: middle;
     border-radius: 50%;
-    background: var(--status-live);
+    background-color: var(--status-live);
   }
   .type {
     display: flex;
