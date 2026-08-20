@@ -1624,13 +1624,13 @@
     position: relative;
     display: inline-block;
     vertical-align: middle;
-    cursor: pointer;
     width: 36px;
     height: 20px;
     border-radius: 9999px;
     background: var(--bg-input);
     border: 1px solid var(--border-subtle);
     transition: background 0.18s, border-color 0.18s;
+    font-size: 0;
   }
   .toggle::after {
     display: inline-block;
