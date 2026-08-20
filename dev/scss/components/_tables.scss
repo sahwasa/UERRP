@@ -38,11 +38,11 @@
       transition:background .12s;
       white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
 
-      &.td-wrap { white-space:normal; word-break:keep-all; overflow:visible; text-overflow:clip; }
-      &.td-mono { font-family:'JetBrains Mono','Consolas',monospace; font-size:12px; color:var(--info); }
-      &.td-bold { color:var(--text-strong); font-variation-settings:'wght' 700; }
-      &.td-center { text-align:center; }
     }
+    .td-wrap { white-space:normal; word-break:keep-all; overflow:visible; text-overflow:clip; }
+    .td-mono { font-family:'JetBrains Mono','Consolas',monospace; font-size:12px; color:var(--info); }
+    .td-bold { color:var(--text-strong); font-variation-settings:'wght' 700; }
+    .td-center { text-align:center; }
 
     tbody tr {
       transition:background .12s;

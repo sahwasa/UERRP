@@ -1846,22 +1846,22 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .tbl-wrap td.td-wrap {
+  .tbl-wrap .td-wrap {
     white-space: normal;
     word-break: keep-all;
     overflow: visible;
     text-overflow: clip;
   }
-  .tbl-wrap td.td-mono {
+  .tbl-wrap .td-mono {
     font-family: "JetBrains Mono", "Consolas", monospace;
     font-size: 12px;
     color: var(--info);
   }
-  .tbl-wrap td.td-bold {
+  .tbl-wrap .td-bold {
     color: var(--text-strong);
     font-variation-settings: "wght" 700;
   }
-  .tbl-wrap td.td-center {
+  .tbl-wrap .td-center {
     text-align: center;
   }
   .tbl-wrap tbody tr {
