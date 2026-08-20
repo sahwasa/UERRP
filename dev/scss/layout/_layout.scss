@@ -88,8 +88,6 @@
         & > .section{@include flex($direction:column,$align:stretch);flex:1;height:100%;min-height:0;} 
       }
     }
-
-
   }  
   .bredcrumb{text-align:right;
     ul{@include flex($inline:true);}
