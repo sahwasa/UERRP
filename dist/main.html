@@ -256,102 +256,126 @@
 </div>
 <dialog id="add_disaster" class="modal" popover="manual" aria-labelledby="add_disaster_title">
   <header class="modal__heading">
-    <h2 id="add_disaster_title" class="modal__title">재난정보 추가 / 수정</h2>
+    <h2 id="add_disaster_title" class="modal__title">재난정보 추가</h2>
     <button type="button" class="modal__close btn ghost icon-only" popovertargetaction="close" popovertarget="add_disaster"><i data-lucide="x"></i>팝업 닫기</button>
   </header>
 
   <section class="modal__body">
     <div class="form-grid">
       <div class="field full">
-        <label>재난유형 <span class="req">*</span></label>
+        <label for="disaster_type_1">재난유형 <span class="req">*</span></label>
         <div class="input-group">
-          <select class="select" title="재난분류">
-            <option value="">자연재난</option>
+          <select id="disaster_type_1" class="select" title="대분류" onchange="onDisasterTypeChange(1, this.value)">
+            <option value="">대분류 선택</option>
+            <option value="T1">자연재난</option>
+            <option value="T2">사회재난</option>
+            <option value="T3">기타재난</option>
           </select>
-          <select class="select" title="재난종류">
-            <option value="">호우</option>
+          <select id="disaster_type_2" class="select" title="중분류" onchange="onDisasterTypeChange(2, this.value)">
+            <option value="">중분류 선택</option>
           </select>
-          <select class="select" title="재난특보">
-            <option value="">호우주의보</option>
+          <select id="disaster_type_3" class="select" title="소분류">
+            <option value="">소분류 선택</option>
           </select>
         </div>
       </div>
 
       <div class="field">
-        <label>재난상황</label>
-        <div class="input-group">
-          <label class="radio-row"><input type="radio" name="dstr_case" value="real" checked>실제</label>
-          <label class="radio-row"><input type="radio" name="dstr_case" value="training">훈련</label>
-          <label class="radio-row"><input type="radio" name="dstr_case" value="test">시험</label>
+        <label>재난상황 <span class="req">*</span></label>
+        <div class="input-group" id="disaster_case_group">
+          <label class="radio-row"><input type="radio" name="case" value="Actual" checked>실제</label>
+          <label class="radio-row"><input type="radio" name="case" value="Exercise">훈련</label>
+          <label class="radio-row"><input type="radio" name="case" value="Test">시험</label>
         </div>
       </div>
 
       <div class="field">
-        <label for="dstr_crisis_lvl">위기대응단계 <span class="req">*</span></label>
-        <select id="dstr_crisis_lvl" class="select">
-          <option value="">관심</option>
-          <option value="">주의</option>
-          <option value="">경계</option>
-          <option value="">심각</option>
+        <label for="response_stage_cd">위기대응단계 <span class="req">*</span></label>
+        <select id="response_stage_cd" class="select">
+          <option value="">단계 선택</option>
+          <option value="1">관심</option>
+          <option value="2">주의</option>
+          <option value="3">경계</option>
+          <option value="4">심각</option>
         </select>
       </div>
 
       <div class="field full">
-        <label for="dstr_nm">재난상황명 <span class="req">*</span></label>
-        <input id="dstr_nm" class="input" type="text" placeholder="재난상황명">
+        <label for="disaster_name">재난상황명 <span class="req">*</span></label>
+        <input id="disaster_name" class="input" type="text">
       </div>
 
       <div class="field full">
-        <label for="dstr_ocrn_dt">발생시각 <span class="req">*</span></label>
+        <label for="occur_date">발생일시 <span class="req">*</span></label>
         <div class="input-group">
-          <input id="dstr_ocrn_dt" class="input" type="date" title="발생일자">
-          <input class="input" type="time" title="발생시간">
+          <input id="occur_date" class="input" type="date" title="발생일자">
+          <input id="occur_time" class="input" type="time" title="발생시간">
         </div>
       </div>
 
       <div class="field full">
-        <label>발생위치 <span class="req">*</span></label>
+        <label for="sido_cd">발생지역 <span class="req">*</span></label>
         <div class="input-group">
-          <select class="select" title="시도">
-            <option value="">시도</option>
+          <select id="sido_cd" class="select" title="시도" onchange="onLocationChange(1, this.value)">
+            <option value="">시도 선택</option>
+            <option value="5100000000">강원특별자치도</option>
+            <option value="4100000000">경기도</option>
+            <option value="4800000000">경상남도</option>
+            <option value="4700000000">경상북도</option>
+            <option value="2900000000">광주광역시</option>
+            <option value="2700000000">대구광역시</option>
+            <option value="3000000000">대전광역시</option>
+            <option value="2600000000">부산광역시</option>
+            <option value="1100000000">서울특별시</option>
+            <option value="3600000000">세종특별자치시</option>
+            <option value="3100000000">울산광역시</option>
+            <option value="2800000000">인천광역시</option>
+            <option value="4600000000">전라남도</option>
+            <option value="5200000000">전북특별자치도</option>
+            <option value="5000000000">제주특별자치도</option>
+            <option value="4400000000">충청남도</option>
+            <option value="4300000000">충청북도</option>
           </select>
-          <select class="select" title="시군구">
-            <option value="">시군구</option>
+          <select id="sgg_cd" class="select" title="시군구" onchange="onLocationChange(2, this.value)">
+            <option value="">시군구 선택</option>
           </select>
-          <select class="select" title="읍면동">
-            <option value="">읍면동</option>
+          <select id="emd_cd" class="select" title="읍면동">
+            <option value="">읍면동 선택</option>
           </select>
         </div>
-        <input class="input" type="text" title="상세위치" placeholder="상세 위치 입력">
       </div>
 
       <div class="field full">
-        <label for="dstr_cn">내용</label>
-        <textarea id="dstr_cn" class="textarea" wrap="hard" rows="4"></textarea>
+        <label for="location_detail">재난발생 위치 <span class="req">*</span></label>
+        <input id="location_detail" class="input" type="text" title="상세위치" placeholder="상세 위치 입력">
       </div>
 
       <div class="field full">
-        <label for="dstr_inst">주관기관 <span class="req">*</span></label>
-        <select id="dstr_inst" class="select">
-          <option value="">주관기관</option>
+        <label for="description">재난상황 설명</label>
+        <textarea id="description" class="textarea" wrap="hard" rows="4"></textarea>
+      </div>
+
+      <div class="field full">
+        <label for="managing_inst_cd">주관기관 <span class="req">*</span></label>
+        <select id="managing_inst_cd" class="select" onchange="onManagingInstChange(this.value)">
+          <option value="">주관기관 선택</option>
+          <option value="C0001">포항시청</option>
+          <option value="ETRI">한국전자통신연구원</option>
         </select>
       </div>
 
       <div class="field full">
-        <label>담당자 <span class="req">*</span></label>
+        <label for="managing_dept_cd">담당자 <span class="req">*</span></label>
         <div class="input-group">
-          <select class="select" title="소속부서">
-            <option value="">소속부서</option>
+          <select id="managing_dept_cd" class="select" title="소속부서" onchange="onDeptChange(this.value)">
+            <option value="">소속부서 선택</option>
           </select>
-          <select class="select" title="담당자">
-            <option value="">담당자</option>
+          <select id="manager_id" class="select" title="담당자" onchange="addManagerTag(this)">
+            <option value="">담당자 선택</option>
           </select>
-          <button type="button" class="btn link">+ 추가</button>
         </div>
-        <div class="tag-input readonly">
-          <span class="tag">홍길동 <button type="button" aria-label="홍길동 삭제">×</button></span>
-          <span class="tag">김영희 <button type="button" aria-label="김영희 삭제">×</button></span>
-        </div>
+        <!-- 담당자 태그 마크업: <span class="tag">홍길동 <button type="button" aria-label="홍길동 삭제">×</button></span> -->
+        <div class="tag-input readonly" id="manager_tag_list"></div>
       </div>
 
       <div class="field full">
@@ -362,8 +386,7 @@
   </section>
 
   <div class="modal__footer">
-    <button type="button" class="btn primary">추가 or 저장</button>
-    <button type="button" class="btn outline-danger">삭제(대기중 즉 발령전 일때만)</button>
+    <button type="button" class="btn primary" onclick="saveDisaster()">추가</button>
     <button type="button" class="btn secondary" popovertargetaction="close" popovertarget="add_disaster">닫기</button>
   </div>
 </dialog>
