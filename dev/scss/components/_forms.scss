@@ -104,7 +104,9 @@
     &:read-only{cursor:default;}
   }
   .input.error { border-color:var(--status-live); &:focus { box-shadow:0 0 0 3px rgba(220,38,38,.12); } }
-  .textarea { height:auto; min-height:80px; resize:vertical; line-height:1.6; padding:10px 12px; }
+  .textarea { height:auto; min-height:80px; resize:vertical; line-height:1.6; padding:10px 12px;
+    &[rows] { min-height:0; } // rows 지정 시 rows 기준 높이
+  }
 
   .input-wrap {
     position:relative;

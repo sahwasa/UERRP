@@ -1052,6 +1052,9 @@
     line-height: 1.6;
     padding: 10px 12px;
   }
+  .textarea[rows] {
+    min-height: 0;
+  }
   .input-wrap {
     position: relative;
   }
