@@ -13,7 +13,8 @@
 
   .noti-list {
     @include flex($direction:column, $align:stretch); gap:$sp-6;
-    &[data-empty]:empty { padding:40px 0; color:var(--text-faint); font-size:$font-size-13; }
+    // 알림 없음: 아이콘 + 문구 한 줄, 가운데 정렬 (목록용 세로 배치 해제)
+    &[data-empty]:empty { flex-direction:row; align-items:center; justify-content:center; padding:40px 0; color:var(--text-faint); font-size:$font-size-13; }
   }
 
   .noti-item {

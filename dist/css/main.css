@@ -2752,6 +2752,9 @@
     gap: 6px;
   }
   .noti-list[data-empty]:empty {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     padding: 40px 0;
     color: var(--text-faint);
     font-size: 13px;
