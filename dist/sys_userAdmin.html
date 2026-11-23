@@ -22,7 +22,7 @@
     </div>
     <div class="hdr-divider"></div>
     <ul>
-      <li><button type="button" class="hdr-btn" title="알림" aria-label="알림"><i data-lucide="bell"></i></button></li>      
+      <li><button type="button" class="hdr-btn" popovertarget="p_noti" title="알림" aria-label="알림 6건"><i data-lucide="bell"></i><span class="alert_num">6</span></button></li>      
       <li><button type="button" class="hdr-btn" title="채팅알림" aria-label="채팅알림"><i data-lucide="messages-square"></i><span class="alert_num">82</span></button></li>
       <li><button type="button" onclick="location.href='sys_userAdmin.html'" class="hdr-btn" title="시스템관리" aria-label="시스템관리"><i data-lucide="settings"></i></button></li>
       <li>
@@ -46,6 +46,102 @@
     <p>메세시 전송에 실패하였습니다.</p>
   </div>
 </div>
+
+<dialog id="p_noti" class="modal modal--noti" popover="manual" aria-labelledby="p_noti_title">
+  <header class="modal__heading">
+    <h2 id="p_noti_title" class="modal__title">알림</h2>
+    <button type="button" class="modal__close btn ghost icon-only" popovertargetaction="close" popovertarget="p_noti"><i data-lucide="x"></i>팝업 닫기</button>
+  </header>
+
+  <section class="modal__body">
+    <div class="noti-toolbar">
+      <div class="seg" role="tablist" aria-label="알림 구분">
+        <button type="button" class="on" role="tab" aria-selected="true">전체 <em>6</em></button>
+        <button type="button" role="tab" aria-selected="false">재난정보 <em>2</em></button>
+        <button type="button" role="tab" aria-selected="false">대응 프로세스 <em>4</em></button>
+      </div>
+      <button type="button" class="btn link">모두 읽음</button>
+    </div>
+
+    <ul class="noti-list" data-empty="새 알림이 없습니다.">
+      <!-- 안 읽은 알림: li.noti-item.is-unread -->
+      <li class="noti-item is-unread">
+        <a class="noti-item__link" href="main_dtl.html">
+          <span class="noti-item__icon"><i class="hazard-icon" data-event-cd="HRA"></i></span>
+          <div class="noti-item__body">
+            <p class="noti-item__meta"><span class="noti-item__type">새 재난정보</span><time datetime="2026-08-04T17:20">2026-08-04 17:20</time></p>
+            <p class="noti-item__title">25년 7월 안양천 범람 재난대응</p>
+            <p class="noti-item__desc">서울시(양천구) · 호우경보 · 위기대응단계 경계</p>
+          </div>
+        </a>
+      </li>
+      <li class="noti-item is-unread">
+        <a class="noti-item__link" href="main_dtl.html">
+          <span class="noti-item__icon noti-item__icon--proc"><i data-lucide="list-checks"></i></span>
+          <div class="noti-item__body">
+            <p class="noti-item__meta"><span class="noti-item__type">프로세스 상태 변경</span><time datetime="2026-08-04T17:12">2026-08-04 17:12</time></p>
+            <p class="noti-item__title">[이재민 구호] 25년 7월 안양천 범람 재난대응</p>
+            <p class="noti-item__state"><span class="stat stat--await">대기중</span><i data-lucide="arrow-right"></i><span class="stat stat--ongoing">진행중</span></p>
+          </div>
+        </a>
+      </li>
+      <li class="noti-item is-unread">
+        <a class="noti-item__link" href="main_dtl.html">
+          <span class="noti-item__icon noti-item__icon--proc"><i data-lucide="list-checks"></i></span>
+          <div class="noti-item__body">
+            <p class="noti-item__meta"><span class="noti-item__type">프로세스 상태 변경</span><time datetime="2026-08-04T16:58">2026-08-04 16:58</time></p>
+            <p class="noti-item__title">[현장출동 및 초기대응 조치] 25년 7월 안양천 범람 재난대응</p>
+            <p class="noti-item__state"><span class="stat stat--ongoing">진행중</span><i data-lucide="arrow-right"></i><span class="stat stat--done">완료</span></p>
+          </div>
+        </a>
+      </li>
+      <li class="noti-item is-unread">
+        <a class="noti-item__link" href="main_dtl.html">
+          <span class="noti-item__icon"><i class="hazard-icon" data-event-cd="DFD"></i></span>
+          <div class="noti-item__body">
+            <p class="noti-item__meta"><span class="noti-item__type">새 재난정보</span><time datetime="2026-08-04T16:40">2026-08-04 16:40</time></p>
+            <p class="noti-item__title">극한호우 도시 침수 테스트</p>
+            <p class="noti-item__desc">경상북도(포항시) · 호우주의보 · 위기대응단계 주의</p>
+          </div>
+        </a>
+      </li>
+      <li class="noti-item is-unread">
+        <a class="noti-item__link" href="main_dtl.html">
+          <span class="noti-item__icon noti-item__icon--proc"><i data-lucide="list-checks"></i></span>
+          <div class="noti-item__body">
+            <p class="noti-item__meta"><span class="noti-item__type">프로세스 상태 변경</span><time datetime="2026-08-04T16:31">2026-08-04 16:31</time></p>
+            <p class="noti-item__title">[통제구역 설정] 극한호우 도시 침수 테스트</p>
+            <p class="noti-item__state"><span class="stat stat--await">대기중</span><i data-lucide="arrow-right"></i><span class="stat stat--ongoing">진행중</span></p>
+          </div>
+        </a>
+      </li>
+      <li class="noti-item is-unread">
+        <a class="noti-item__link" href="main_dtl.html">
+          <span class="noti-item__icon noti-item__icon--proc"><i data-lucide="list-checks"></i></span>
+          <div class="noti-item__body">
+            <p class="noti-item__meta"><span class="noti-item__type">프로세스 상태 변경</span><time datetime="2026-08-04T16:05">2026-08-04 16:05</time></p>
+            <p class="noti-item__title">[상황 전파] 극한호우 도시 침수 테스트</p>
+            <p class="noti-item__state"><span class="stat stat--ongoing">진행중</span><i data-lucide="arrow-right"></i><span class="stat stat--done">완료</span></p>
+          </div>
+        </a>
+      </li>
+      <li class="noti-item">
+        <a class="noti-item__link" href="main_dtl.html">
+          <span class="noti-item__icon"><i class="hazard-icon" data-event-cd="BCS"></i></span>
+          <div class="noti-item__body">
+            <p class="noti-item__meta"><span class="noti-item__type">새 재난정보</span><time datetime="2026-08-04T09:15">2026-08-04 09:15</time></p>
+            <p class="noti-item__title">25년 7월 안양천 범람 재난대응</p>
+            <p class="noti-item__desc">서울시(양천구) · 호우주의보 · 위기대응단계 관심</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <div class="modal__footer">
+    <button type="button" class="btn secondary" popovertargetaction="close" popovertarget="p_noti">닫기</button>
+  </div>
+</dialog>
 
 <dialog id="p_userInfo" class="modal" popover="manual" aria-labelledby="p_userInfo_title">
   <header class="modal__heading">
