@@ -11,6 +11,11 @@
     .seg em { font-style:normal; margin-left:2px; font-feature-settings:'tnum'; }
   }
 
+  .noti-summary {
+    margin-bottom:$sp-12; font-size:$font-size-12; color:var(--text-muted);
+    strong { color:var(--status-live); @include fw(700); }
+  }
+
   .noti-list {
     @include flex($direction:column, $align:stretch); gap:$sp-6;
     // 알림 없음: 아이콘 + 문구 한 줄, 가운데 정렬 (목록용 세로 배치 해제)
@@ -43,6 +48,18 @@
       white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
     }
     &__desc { margin-top:2px; font-size:$font-size-12; color:var(--text-muted); }
+    // 채팅: 마지막 메시지 미리보기 (작성자 + 내용, 한 줄 말줄임)
+    &__preview {
+      margin-top:2px; font-size:$font-size-12; color:var(--text-muted);
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+      strong { margin-right:6px; color:var(--text-primary); @include fw(650); }
+    }
+    // 채팅: 안 읽은 메시지 수
+    &__count {
+      align-self:center; flex-shrink:0; min-width:22px; height:22px; padding:0 7px;
+      border-radius:$rad-pill; background:var(--status-live); color:#fff;
+      font-size:$font-size-11; line-height:22px; text-align:center; @include fw(700); font-feature-settings:'tnum';
+    }
     &__state {
       @include flex; gap:$sp-4; margin-top:$sp-4;
       .icon { width:12px; height:12px; color:var(--text-faint); }
