@@ -82,10 +82,38 @@ var scssOptions = {
   indentWidth : 1,// 들여쓰기 갯수 / default: 2  
   sourceComments: false // 컴파일 된 css에 원본 소스이 위치와 줄 수 주석 표시
 }
+// 빌드 PC(OS·폴더 경로)와 상관없이 항상 같은 css / 소스맵이 나오도록 정리
+// 1) CSS 끝에 LF를 붙여 둠 → 없으면 소스맵 주석 앞에 OS 줄바꿈(Windows는 CRLF)이 붙어 줄바꿈이 섞임
+// 2) 소스맵 sources를 scss 폴더 기준 상대경로로 → 경로에 한글·공백이 있으면 gulp-sass가
+//    상대경로 변환에 실패해 'D:/%EC%97%B0...' 같은 PC 절대경로가 그대로 들어감
+function normalizeCss(){
+  const { Transform } = require('stream');
+  const toSlash = (p) => p.replace(/\\/g, '/').replace(/^\//, '');
+  return new Transform({
+    objectMode: true,
+    transform(file, enc, cb){
+      if (file.isBuffer()) {
+        const css = file.contents.toString();
+        if (!css.endsWith('\n')) file.contents = Buffer.from(css + '\n');
+      }
+      if (file.sourceMap && Array.isArray(file.sourceMap.sources)) {
+        const base = toSlash(file.base).toLowerCase() + '/';
+        file.sourceMap.sources = file.sourceMap.sources.map((srcPath) => {
+          let p = srcPath;
+          try { p = decodeURIComponent(srcPath); } catch (e) {}
+          p = toSlash(p.replace(/^file:\/\/?/, ''));
+          return p.toLowerCase().startsWith(base) ? p.slice(base.length) : p;
+        });
+      }
+      cb(null, file);
+    }
+  });
+}
 function scss(){
   return merge(
     src([path.scss, '!' + dev + "/scss/**/_*.scss"], {sourcemaps: true })
     .pipe(sass(scssOptions).on('error', sass.logError))
+    .pipe(normalizeCss())
     .pipe(dest(dist + '/css', { sourcemaps: './maps' }))
     .pipe(bs.stream())
   )
