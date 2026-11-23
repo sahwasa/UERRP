@@ -2744,6 +2744,16 @@
     margin-left: 2px;
     font-feature-settings: "tnum";
   }
+  .noti-summary {
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .noti-summary strong {
+    color: var(--status-live);
+    font-weight: 700;
+    font-variation-settings: "wght" 700;
+  }
   .noti-list {
     display: flex;
     justify-content: flex-start;
@@ -2752,6 +2762,9 @@
     gap: 6px;
   }
   .noti-list[data-empty]:empty {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     padding: 40px 0;
     color: var(--text-faint);
     font-size: 13px;
@@ -2829,6 +2842,36 @@
     margin-top: 2px;
     font-size: 12px;
     color: var(--text-muted);
+  }
+  .noti-item__preview {
+    margin-top: 2px;
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .noti-item__preview strong {
+    margin-right: 6px;
+    color: var(--text-primary);
+    font-weight: 650;
+    font-variation-settings: "wght" 650;
+  }
+  .noti-item__count {
+    align-self: center;
+    flex-shrink: 0;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 7px;
+    border-radius: 9999px;
+    background: var(--status-live);
+    color: #fff;
+    font-size: 11px;
+    line-height: 22px;
+    text-align: center;
+    font-weight: 700;
+    font-variation-settings: "wght" 700;
+    font-feature-settings: "tnum";
   }
   .noti-item__state {
     display: flex;

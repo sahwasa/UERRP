@@ -23,7 +23,7 @@
     <div class="hdr-divider"></div>
     <ul>
       <li><button type="button" class="hdr-btn" popovertarget="p_noti" title="알림" aria-label="알림 6건"><i data-lucide="bell"></i><span class="alert_num">6</span></button></li>      
-      <li><button type="button" class="hdr-btn" title="채팅알림" aria-label="채팅알림"><i data-lucide="messages-square"></i><span class="alert_num">82</span></button></li>
+      <li><button type="button" class="hdr-btn" popovertarget="p_chat_noti" title="채팅알림" aria-label="안 읽은 채팅 13건"><i data-lucide="messages-square"></i><span class="alert_num">13</span></button></li>
       <li><button type="button" onclick="location.href='sys_userAdmin.html'" class="hdr-btn" title="시스템관리" aria-label="시스템관리"><i data-lucide="settings"></i></button></li>
       <li>
         <button type="button" class="hdr-btn" popovertarget="p_userInfo" title="내정보" area-label="내정보"><i data-lucide="user-round"></i><span>홍길동님</span></button>      
@@ -140,6 +140,69 @@
 
   <div class="modal__footer">
     <button type="button" class="btn secondary" popovertargetaction="close" popovertarget="p_noti">닫기</button>
+  </div>
+</dialog>
+
+<dialog id="p_chat_noti" class="modal modal--noti" popover="manual" aria-labelledby="p_chat_noti_title">
+  <header class="modal__heading">
+    <h2 id="p_chat_noti_title" class="modal__title">채팅</h2>
+    <button type="button" class="modal__close btn ghost icon-only" popovertargetaction="close" popovertarget="p_chat_noti"><i data-lucide="x"></i>팝업 닫기</button>
+  </header>
+
+  <section class="modal__body">
+    <p class="noti-summary">안 읽은 메시지가 있는 재난대응 프로세스 <strong>4</strong>개 · 메시지 <strong>13</strong>건</p>
+
+    <!-- 프로세스별 1행, 최근 메시지순. 항목 클릭 시 해당 프로세스 채팅으로 이동 -->
+    <ul class="noti-list" data-empty="안 읽은 메시지가 없습니다.">
+      <li class="noti-item is-unread">
+        <a class="noti-item__link" href="main_dtl.html">
+          <span class="noti-item__icon"><i class="hazard-icon" data-event-cd="HRA"></i></span>
+          <div class="noti-item__body">
+            <p class="noti-item__meta"><span class="noti-item__type">25년 7월 안양천 범람 재난대응</span><time datetime="2026-08-04T17:24">17:24</time></p>
+            <p class="noti-item__title">이재민 구호</p>
+            <p class="noti-item__preview"><strong>홍길동</strong>신월동 주민센터에 임시대피소 개설 완료했습니다. 구호물품 추가 요청드립니다.</p>
+          </div>
+          <span class="noti-item__count" aria-label="안 읽은 메시지 5건">5</span>
+        </a>
+      </li>
+      <li class="noti-item is-unread">
+        <a class="noti-item__link" href="main_dtl.html">
+          <span class="noti-item__icon"><i class="hazard-icon" data-event-cd="HRA"></i></span>
+          <div class="noti-item__body">
+            <p class="noti-item__meta"><span class="noti-item__type">25년 7월 안양천 범람 재난대응</span><time datetime="2026-08-04T17:10">17:10</time></p>
+            <p class="noti-item__title">현장출동 및 초기대응 조치</p>
+            <p class="noti-item__preview"><strong>김영희</strong>목동교 하부도로 통제 완료, 배수펌프 2대 추가 가동 중입니다.</p>
+          </div>
+          <span class="noti-item__count" aria-label="안 읽은 메시지 4건">4</span>
+        </a>
+      </li>
+      <li class="noti-item is-unread">
+        <a class="noti-item__link" href="main_dtl.html">
+          <span class="noti-item__icon"><i class="hazard-icon" data-event-cd="DFD"></i></span>
+          <div class="noti-item__body">
+            <p class="noti-item__meta"><span class="noti-item__type">극한호우 도시 침수 테스트</span><time datetime="2026-08-04T16:52">16:52</time></p>
+            <p class="noti-item__title">통제구역 설정</p>
+            <p class="noti-item__preview"><strong>박철수</strong>지하차도 3곳 진입 통제 시작합니다.</p>
+          </div>
+          <span class="noti-item__count" aria-label="안 읽은 메시지 3건">3</span>
+        </a>
+      </li>
+      <li class="noti-item is-unread">
+        <a class="noti-item__link" href="main_dtl.html">
+          <span class="noti-item__icon"><i class="hazard-icon" data-event-cd="DFD"></i></span>
+          <div class="noti-item__body">
+            <p class="noti-item__meta"><span class="noti-item__type">극한호우 도시 침수 테스트</span><time datetime="2026-08-04T16:05">16:05</time></p>
+            <p class="noti-item__title">상황 전파</p>
+            <p class="noti-item__preview"><strong>이영수</strong>재난문자 발송 완료했습니다.</p>
+          </div>
+          <span class="noti-item__count" aria-label="안 읽은 메시지 1건">1</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <div class="modal__footer">
+    <button type="button" class="btn secondary" popovertargetaction="close" popovertarget="p_chat_noti">닫기</button>
   </div>
 </dialog>
 
